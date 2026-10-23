@@ -1,0 +1,35 @@
+{
+  "variantName": "toc-on-this-page",
+  "baseBlock": "toc",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/get-involved/become-a-member.html",
+  "visualCharacteristics": {
+    "stylingNotes": [
+      "Sans 'On this page' title (22px mobile / 24px desktop, weight 300) above a list of single-line links (18px/28px, 20px/32px desktop; ellipsis when too long), each with an orange south-east arrow that turns ochre with the text on hover; no rule; 8-of-12 column width on desktop."
+    ],
+    "variantRationale": [
+      "Source cmp-toc is generated client-side from the page H2s; no library block covers it, so it is a new custom block (base 'toc')."
+    ],
+    "purpose": "Auto-generated 'On this page' list of anchor links to the page H2s"
+  },
+  "contentPattern": {
+    "summary": "Authored empty (optionally one title row); links are built at runtime from main h2 elements so they never drift from the headings",
+    "structure": "optional row 1 = title text (default 'On this page'); no other rows"
+  },
+  "blockContent": {
+    "rows": [["Optional title, e.g. On this page"]],
+    "notes": "Do not author the links; the block builds them from every H2 in main and removes itself when there are none."
+  },
+  "options": [],
+  "memberVariantIds": ["toc-on-this-page"],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/get-involved/become-a-member",
+      "/drug-discovery/about-us/our-facilities",
+      "/drug-discovery/get-involved"
+    ],
+    "reuseCount": 3
+  },
+  "reuseGuidance": "Use once per page, after the intro, on long text pages with H2 sections. Leave the block empty or give it a single title row; never type the links by hand.",
+  "usageDescription": "Contents list for text pages that jumps to each H2 section."
+}

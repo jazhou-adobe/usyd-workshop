@@ -1,4 +1,5 @@
-/* columns-bleed-image: values from sydney.edu.au .m-content-w-bleed-image (jacaranda panel) */
+/* columns-bleed-image: values from sydney.edu.au .m-content-w-bleed-image (jacaranda panel).
+   Panel colour is --columns-bleed-image-bg; option `sandstone` swaps it. */
 
 /* the panel carries its own vertical spacing, so drop the section padding */
 main > .section.columns-bleed-image-container {
@@ -13,14 +14,21 @@ main > .section > .columns-bleed-image-wrapper {
 }
 
 .columns-bleed-image {
+  --columns-bleed-image-bg: #d6dbeb;
+
   color: var(--text-color);
+}
+
+/* option: sandstone (light peach) panel */
+.columns-bleed-image.sandstone {
+  --columns-bleed-image-bg: #fcede2;
 }
 
 /* mobile (source m-content-w-image-vertical): panel, then 400px image */
 .columns-bleed-image .columns-bleed-image-row {
   display: flex;
   flex-direction: column;
-  background-color: #d6dbeb;
+  background-color: var(--columns-bleed-image-bg);
 }
 
 .columns-bleed-image .columns-bleed-image-text-col {
@@ -135,6 +143,50 @@ main > .section > .columns-bleed-image-wrapper {
   object-fit: cover;
 }
 
+/* date eyebrow above the heading (source cmp-teaser-content__pretitle) */
+.columns-bleed-image .columns-bleed-image-text-col p.columns-bleed-image-eyebrow {
+  margin: 0 0 32px;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 16px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* single CTA: underlined text link (source cmp-button, text style) */
+.columns-bleed-image .columns-bleed-image-text-col p.columns-bleed-image-cta {
+  margin: 48px 0 0;
+}
+
+.columns-bleed-image .columns-bleed-image-cta a:any-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0 8px;
+  padding: 10px 4px;
+  color: var(--link-color);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.columns-bleed-image .columns-bleed-image-cta a:any-link::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  bottom: 1px;
+  left: 4px;
+  height: 1px;
+  background-color: var(--link-color);
+}
+
+.columns-bleed-image .columns-bleed-image-cta a:any-link:hover {
+  background-color: #fdedea;
+  text-decoration: none;
+}
+
 /* desktop (source m-content-w-bleed-image): 72px top band, text panel
    left, image right overhanging the panel bottom by 80px */
 @media (width >= 900px) {
@@ -142,17 +194,13 @@ main > .section > .columns-bleed-image-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-top: 72px;
-    background: linear-gradient(#d6dbeb, #d6dbeb) top / 100% calc(100% - 80px) no-repeat;
+    background: linear-gradient(var(--columns-bleed-image-bg), var(--columns-bleed-image-bg)) top / 100% calc(100% - 80px) no-repeat;
   }
 
   /* text aligns to the 1200px content column (16px gutter); 96px panel
      padding + 80px white strip below the panel */
   .columns-bleed-image .columns-bleed-image-text-col {
     padding: 0 64px 176px max(16px, calc(100% - 584px));
-  }
-
-  .columns-bleed-image .image-first .columns-bleed-image-text-col {
-    padding: 0 max(16px, calc(100% - 584px)) 176px 64px;
   }
 
   .columns-bleed-image .columns-bleed-image-img-col {
@@ -163,6 +211,10 @@ main > .section > .columns-bleed-image-wrapper {
   .columns-bleed-image .columns-bleed-image-img-col picture {
     position: absolute;
     inset: 0;
+  }
+
+  .columns-bleed-image .columns-bleed-image-text-col p.columns-bleed-image-cta {
+    margin-top: 40px;
   }
 }
 
@@ -181,9 +233,59 @@ main > .section > .columns-bleed-image-wrapper {
   .columns-bleed-image .columns-bleed-image-text-col {
     padding-right: 131px;
   }
+}
+
+/* image cell first = event/news teaser: image inset inside the band,
+   no bleed and no overlap */
+.columns-bleed-image .image-first {
+  padding-top: 52px;
+}
+
+/* mobile (source m-content-w-image-vertical): text first, 400px image below */
+.columns-bleed-image .image-first .columns-bleed-image-img-col {
+  order: 1;
+}
+
+.columns-bleed-image .image-first .columns-bleed-image-text-col {
+  padding: 0 16px 80px;
+}
+
+.columns-bleed-image .image-first .columns-bleed-image-text-col h2 {
+  margin-bottom: 30px;
+}
+
+.columns-bleed-image .image-first .columns-bleed-image-text-col p.columns-bleed-image-cta {
+  margin-top: 30px;
+}
+
+/* desktop (source m-content-w-image-std): 550px columns, 68px gap, 360px image */
+@media (width >= 900px) {
+  .columns-bleed-image .image-first {
+    align-items: start;
+    gap: 0 68px;
+    padding: 64px max(16px, calc((100% - 1168px) / 2));
+    background: var(--columns-bleed-image-bg);
+  }
+
+  .columns-bleed-image .image-first .columns-bleed-image-img-col {
+    order: 0;
+    height: 360px;
+    min-height: 0;
+  }
+
+  .columns-bleed-image .image-first .columns-bleed-image-img-col picture {
+    position: static;
+  }
 
   .columns-bleed-image .image-first .columns-bleed-image-text-col {
-    padding-right: max(16px, calc(100% - 584px));
-    padding-left: 131px;
+    padding: 0;
+  }
+
+  .columns-bleed-image .image-first .columns-bleed-image-text-col h2 {
+    margin-bottom: 24px;
+  }
+
+  .columns-bleed-image .image-first .columns-bleed-image-text-col p.columns-bleed-image-cta {
+    margin-top: 24px;
   }
 }

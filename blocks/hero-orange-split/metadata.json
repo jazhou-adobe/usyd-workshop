@@ -1,0 +1,88 @@
+{
+  "variantName": "hero-orange-split",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/about-us.html",
+  "visualCharacteristics": {
+    "stylingNotes": [
+      "Orange (#e64626, ochre) panel on the left with italic serif H1 \"About us\" and a 22px subheading; lab photo on the right, offset above and below the band (m-hero--style-3 / featured bleed-image). No CTA.",
+      "Orange (#e64626) panel left with italic serif H1 \"Neurological and CNS Disorders\", subheading and a dark \"Our research\" button; spinal-cord neuron micrograph right, offset above/below the band (m-hero--style-3).",
+      "Orange (#e64626) panel left with italic serif H1 'News and events', subheading and two buttons (dark filled 'Partner with us', outlined 'Get involved'); lab photo right, offset above/below the band (m-hero--style-3).",
+      "Orange (#e64626, ochre) panel left with italic serif H1 \"Partnerships\", subheading and two buttons (dark filled \"Contact us\", outlined \"Become a member\"); lab photo right, offset below the band (m-hero--style-3 featured bleed-image).",
+      "Orange (#e64626) panel on the left with serif italic white H1 \"Researcher development\", subheading \"Fostering academic excellence\" and dark \"Become a member\" button; photo (ddi-i-have-a-phd.jpeg) on the right, extending below the orange panel.",
+      "Orange (#e64626) panel left with italic serif H1 \"What is drug discovery?\" and subheading; photo of glass vials on a conveyor right, extending below the band (m-hero--style-3). No CTA."
+    ],
+    "variantRationale": [
+      "Orange panel beside an offset photo (side-by-side), unlike hero-orange-band which stacks a full-bleed image above the band and has a CTA; about 60% similar",
+      "Orange panel with H1 + subheading + button beside offset photo; matches the planned variant from about-us/partnerships",
+      "Orange panel with H1 + subheading + two buttons beside an offset photo; matches the planned variant (hero-orange-band stacks the image above the band, so it is not a match)",
+      "Planned from about-us: orange panel with H1 + subheading beside an offset photo; this page adds two CTA buttons (same layout, >=80% match)",
+      "Orange panel with H1 + subheading + button beside a photo - exact match for the planned hero-orange-split; hero-orange-band (photo above a full-width band) is a different layout",
+      "Planned on about-us/partnerships: orange panel with H1 + subheading beside an offset photo; same layout here without buttons (>=80%). hero-orange-band stacks a full-bleed image above the band (~60%)."
+    ],
+    "purpose": "Orange band with H1, subheading and optional CTAs left; photo right overhanging the band bottom"
+  },
+  "contentPattern": {
+    "summary": "Page hero: title beside a full-bleed image on a coloured band; the background colour belongs to the block",
+    "structure": "row 1 = image; row 2 = H1 title, subheading paragraph, optional CTA links (one per paragraph; first = filled, others = outlined)"
+  },
+  "blockContent": {
+    "rows": [
+      [
+        "Image"
+      ],
+      [
+        "Title (H1), subheading paragraph"
+      ]
+    ],
+    "notes": "Single column; image row then text row (as hero-orange-band). No CTA on this page.",
+    "occurrences": [
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/about-us.html",
+        "description": "H1 \"About us\", subheading \"Generating therapeutic solutions for the most difficult-to-treat diseases with globally underserved clinical needs\", lab photo (ddi-male-and-female-researchers-in-cpc-lab.jpg)"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/neurological-and-cns-disorders.html",
+        "description": "Hero: H1 \"Neurological and CNS Disorders\", subheading \"Improving neurological disorders through multidisciplinary research\", button \"Our research\" (/research/our-research/centres/drug-discovery/research.html), photo spinal-cord-adobe-stock.jpeg (./images/9e7ed5af572b96b7d47c8b97d464a9c4.jpg)"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/news-and-events/news.html",
+        "description": "Orange panel with H1 'Latest news' + subheading beside a photo"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/news-and-events.html",
+        "description": "Hero: H1 'News and events', subheading 'Read about latest research news and register for upcoming events', buttons 'Partner with us' (/drug-discovery/partnerships.html) and 'Get involved' (/drug-discovery/get-involved.html), photo ddi-female-resercher.jpg (./images/35c7ee4b895726384cf57a56b0033a9b.jpg)"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/partnerships.html",
+        "description": "H1 \"Partnerships\", subheading \"Aligning ground-breaking research with industry expertise\", buttons \"Contact us\" and \"Become a member\", photo nick-hunt-victoria-cogger_stefaniezingsheim.jpg"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/get-involved/researcher-development.html",
+        "description": "Hero: H1 \"Researcher development\", subheading \"Fostering academic excellence\", button \"Become a member\" (/drug-discovery/get-involved/become-a-member.html), photo ./images/8cd9271571d6de2c80f9f45bfac9f84f.jpg (ddi-i-have-a-phd.jpeg)"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/what-is-drug-discovery-.html",
+        "description": "H1 \"What is drug discovery?\", subheading \"We identify disease targets and create effective treatments\", photo ./images/0a30f1ecabe7e653a8b0454f51656730.jpg"
+      }
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [
+    "hero-orange-split"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/about-us",
+      "/drug-discovery/our-research/neurological-and-cns-disorders",
+      "/drug-discovery/news-and-events/news",
+      "/drug-discovery/news-and-events",
+      "/drug-discovery/partnerships",
+      "/drug-discovery/get-involved/researcher-development",
+      "/drug-discovery/our-research/what-is-drug-discovery-"
+    ],
+    "reuseCount": 7
+  },
+  "reuseGuidance": "Use for section/landing page heroes with a side photo. For a photo above a full-width band use hero-orange-band; for text over a photo use hero-image-overlay.",
+  "usageDescription": "Section landing hero: H1 and a one-line promise on an orange band beside a photo that drops below the band; zero to two CTAs."
+}

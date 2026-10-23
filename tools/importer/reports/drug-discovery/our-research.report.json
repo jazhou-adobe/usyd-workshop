@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/our-research.html",
+  "path": "drug-discovery/our-research",
+  "timestamp": "2026-10-23T05:20:08.997Z",
+  "title": "Our research - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "accordion-plus",
+    "cards-cta",
+    "columns-bleed-image",
+    "columns-title-left",
+    "columns-contact"
+  ]
+}

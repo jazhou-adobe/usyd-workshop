@@ -1,0 +1,111 @@
+/* cards-profile: round portrait beside a linked name and position (source: .m-profile) */
+.cards-profile > ul {
+  list-style: none;
+  margin: 0 0 32px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.cards-profile .cards-profile-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.cards-profile .cards-profile-card-image {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.cards-profile .cards-profile-card-image picture {
+  display: block;
+  height: 100%;
+}
+
+.cards-profile .cards-profile-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cards-profile .cards-profile-card-body {
+  flex: 1 1 auto;
+  min-width: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-xs);
+  font-weight: 400;
+  line-height: 16px;
+  color: #717171;
+}
+
+.cards-profile .cards-profile-card-body > * {
+  margin: 0;
+}
+
+.cards-profile .cards-profile-card-body > * + * {
+  padding-top: 8px;
+}
+
+.cards-profile .cards-profile-card-name {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 300;
+  line-height: 24px;
+  color: var(--text-color);
+}
+
+.cards-profile .cards-profile-card-name a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* chevron at the end of the row: 12px icon, 12px from the text */
+.cards-profile .is-linked .cards-profile-card-body {
+  padding-right: 24px;
+}
+
+.cards-profile .is-linked::after {
+  content: '';
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 12px;
+  height: 12px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Cpath d='M12 4l19.6 19.06a1.33 1.33 0 0 1 0 1.88L12 44' stroke='%23E64626' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / contain no-repeat;
+  transition: transform 0.2s;
+  pointer-events: none;
+}
+
+/* stretch the name link over the whole row */
+.cards-profile .is-linked .cards-profile-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cards-profile .is-linked .cards-profile-card-link:focus-visible {
+  outline: none;
+}
+
+.cards-profile .is-linked:focus-within {
+  outline: 1px auto var(--text-color);
+  outline-offset: 2px;
+}
+
+.cards-profile .is-linked:is(:hover, :focus-within) .cards-profile-card-name a {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.cards-profile .is-linked:is(:hover, :focus-within)::after {
+  transform: translateX(5px);
+}

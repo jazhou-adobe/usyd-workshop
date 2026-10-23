@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/about-us/our-facilities.html",
+  "path": "drug-discovery/about-us/our-facilities",
+  "timestamp": "2026-10-23T05:13:30.386Z",
+  "title": "Our facilities - The University of Sydney",
+  "template": "text-page",
+  "blocks": [
+    "toc-on-this-page",
+    "toc-on-this-page",
+    "columns-title-left",
+    "columns-title-left",
+    "columns-title-left",
+    "columns-title-left"
+  ]
+}

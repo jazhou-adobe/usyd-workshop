@@ -124,6 +124,163 @@
           "defaultContent": []
         }
       ]
+    },
+    {
+      "name": "section-page",
+      "urls": [
+        "https://www.sydney.edu.au/drug-discovery/about-us.html",
+        "https://www.sydney.edu.au/drug-discovery/news-and-events.html",
+        "https://www.sydney.edu.au/drug-discovery/news-and-events/news.html",
+        "https://www.sydney.edu.au/drug-discovery/news-and-events/drug-discovery-symposium.html",
+        "https://www.sydney.edu.au/drug-discovery/our-research.html",
+        "https://www.sydney.edu.au/drug-discovery/our-research/cancer.html",
+        "https://www.sydney.edu.au/drug-discovery/our-research/cardiovascular-disease.html",
+        "https://www.sydney.edu.au/drug-discovery/our-research/infectious-diseases.html",
+        "https://www.sydney.edu.au/drug-discovery/our-research/neurological-and-cns-disorders.html",
+        "https://www.sydney.edu.au/drug-discovery/our-research/sydney-anti-bacterial-accelerator.html",
+        "https://www.sydney.edu.au/drug-discovery/our-research/tdp-43-research-cluster.html",
+        "https://www.sydney.edu.au/drug-discovery/our-research/what-is-drug-discovery-.html",
+        "https://www.sydney.edu.au/drug-discovery/partnerships.html",
+        "https://www.sydney.edu.au/drug-discovery/get-involved/researcher-development.html"
+      ],
+      "representativeUrl": "https://www.sydney.edu.au/drug-discovery/about-us.html",
+      "description": "Modern Drug Discovery section pages: hero followed by stacked components (text, teaser, tabs, accordion, carousel, tiles, testimonial, news list) and the Stay in touch band",
+      "blocks": [
+        {
+          "name": "hero-orange-split",
+          "instances": [
+            ".m-wrapper-hero.m-hero--style-3"
+          ]
+        },
+        {
+          "name": "hero-image-overlay",
+          "instances": [
+            ".m-wrapper-hero.m-hero--style-1"
+          ]
+        },
+        {
+          "name": "tabs-underline",
+          "instances": [
+            ".cmp-wrapper-tabs"
+          ]
+        },
+        {
+          "name": "accordion-plus",
+          "instances": [
+            ".cmp-wrapper-accordion"
+          ]
+        },
+        {
+          "name": "cards-profile",
+          "instances": [
+            ".m-wrapper-js-profile-contact"
+          ]
+        },
+        {
+          "name": "quote-portrait",
+          "instances": [
+            ".m-wrapper-testimonial.m-testimonial--compact"
+          ]
+        },
+        {
+          "name": "carousel-gallery",
+          "instances": [
+            ".cmp-wrapper-carousel"
+          ]
+        },
+        {
+          "name": "cards-cta",
+          "instances": [
+            ".cmp-wrapper-call-to-action"
+          ]
+        },
+        {
+          "name": "cards-icon-tile",
+          "instances": [
+            ".m-bespoke-layout--bg-grey-90 .m-wrapper-icon-tile"
+          ]
+        },
+        {
+          "name": "table-key-value",
+          "instances": [
+            ".cmp-text table"
+          ]
+        },
+        {
+          "name": "carousel-news",
+          "instances": [
+            ".m-news-article-list"
+          ]
+        },
+        {
+          "name": "cards-news-list",
+          "instances": [
+            ".m-news-article-list__vertical-container"
+          ]
+        },
+        {
+          "name": "columns-bleed-image",
+          "instances": [
+            ".cmp-wrapper-teaser .m-content-w-bleed-image",
+            ".cmp-wrapper-teaser.cmp-teaser--std"
+          ]
+        },
+        {
+          "name": "cards-speaker",
+          "instances": [
+            ".m-bespoke-layout--30-60-layout:has(> .m-bespoke-layout__inner > .cmp-wrapper-image:first-child)"
+          ]
+        },
+        {
+          "name": "columns-title-left",
+          "instances": [
+            ".m-bespoke-layout--30-60-layout:not(:has(.cmp-wrapper-tabs, .m-wrapper-js-profile-contact)):not(:has(> .m-bespoke-layout__inner > .cmp-wrapper-image:first-child))"
+          ]
+        },
+        {
+          "name": "columns-contact",
+          "instances": [
+            ".m-bespoke-layout--bg-grey-90:has(.cmp-wrapper-list) > .m-bespoke-layout__inner"
+          ]
+        }
+      ],
+      "urlPattern": "/drug-discovery/*",
+      "sections": [],
+      "sectionStrategy": "generic: one section per top-level component container in the main column; bg-grey-90 -> light-grey, bg-sand -> sand; 30-60/60-30 containers with default content beside a block -> split"
+    },
+    {
+      "name": "text-page",
+      "urls": [
+        "https://www.sydney.edu.au/drug-discovery/get-involved.html",
+        "https://www.sydney.edu.au/drug-discovery/get-involved/become-a-member.html",
+        "https://www.sydney.edu.au/drug-discovery/get-involved/become-a-member/thank-you.html",
+        "https://www.sydney.edu.au/drug-discovery/about-us/our-facilities.html"
+      ],
+      "representativeUrl": "https://www.sydney.edu.au/drug-discovery/get-involved.html",
+      "description": "Older-layout Drug Discovery pages: breadcrumb, table of contents, rich text, side navigation, embedded Formstack form",
+      "blocks": [
+        {
+          "name": "toc-on-this-page",
+          "instances": [
+            ".cmp-wrapper-table-of-contents"
+          ]
+        },
+        {
+          "name": "embed-formstack",
+          "instances": [
+            ".m-formstack-wrapper"
+          ]
+        },
+        {
+          "name": "columns-title-left",
+          "instances": [
+            ".cmp-container--css-grid--section-layout:not(:has(.m-formstack-wrapper))"
+          ]
+        }
+      ],
+      "urlPattern": "/drug-discovery/*",
+      "sections": [],
+      "sectionStrategy": "generic: section 1 = title, intro, contents list and lead-in; a section break before the first .cmp-container--css-grid--section-layout row group; a row group holding the Formstack form is style \"split\""
     }
   ]
 }

@@ -47,3 +47,11 @@
   font-display: swap;
   src: url('../fonts/lyon-display-italic.woff2') format('woff2');
 }
+
+@font-face {
+  font-family: apercu-mono;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/apercu-mono.woff2') format('woff2');
+}

@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/our-research/cardiovascular-disease.html",
+  "path": "drug-discovery/our-research/cardiovascular-disease",
+  "timestamp": "2026-10-23T05:20:23.047Z",
+  "title": "Cardiovascular Disease - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "tabs-underline",
+    "tabs-underline",
+    "tabs-underline",
+    "tabs-underline",
+    "tabs-underline",
+    "quote-portrait",
+    "columns-title-left",
+    "columns-contact"
+  ]
+}

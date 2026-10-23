@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/news-and-events.html",
+  "path": "drug-discovery/news-and-events",
+  "timestamp": "2026-10-23T05:19:47.183Z",
+  "title": "News and events - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "carousel-news",
+    "columns-bleed-image",
+    "columns-contact"
+  ]
+}

@@ -39,8 +39,11 @@ export default function transform(hookName, element, payload) {
       'header.m-local-desktop-nav__header',
     ]);
 
-    // Empty skip-to-content anchor container
-    removeAll(element, ['#skip-to-content']);
+    // Empty skip-to-content anchor container. On older-layout pages the skip target
+    // is the first content row itself, so only remove it when it holds no content.
+    element.querySelectorAll('#skip-to-content').forEach((el) => {
+      if (!el.textContent.trim() && !el.querySelector('img, iframe, form')) el.remove();
+    });
 
     // Breadcrumb
     removeAll(element, ['.cmp-wrapper-breadcrumb']);
@@ -72,12 +75,10 @@ export default function transform(hookName, element, payload) {
       if (!el.closest('.m-wrapper-news-article-list')) el.remove();
     });
 
-    // Carousel UI controls (non-authorable)
-    removeAll(element, [
-      '.cmp-carousel__actions',
-      '.cmp-carousel__indicators',
-      '.swiper-notification',
-    ]);
+    // Carousel UI controls (non-authorable). Gallery carousels keep their indicators
+    // until afterTransform: the carousel-gallery parser reads the authored slide order from them.
+    element.querySelectorAll('.cmp-carousel__actions, .cmp-carousel__indicators, .swiper-notification')
+      .forEach((el) => { if (!el.closest('.cmp-wrapper-carousel')) el.remove(); });
   }
 
   if (hookName === 'afterTransform') {

@@ -1,0 +1,239 @@
+/* carousel-gallery: values from sydney.edu.au .cmp-wrapper-carousel computed styles */
+.carousel-gallery {
+  --carousel-gallery-index: 0;
+  --carousel-gallery-gap: 16px;
+
+  color: var(--text-color);
+}
+
+.carousel-gallery .carousel-gallery-slides-container {
+  overflow: hidden;
+}
+
+.carousel-gallery .carousel-gallery-slides {
+  display: flex;
+  gap: var(--carousel-gallery-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  transform: translateX(calc(var(--carousel-gallery-index) * (-100% - var(--carousel-gallery-gap))));
+  transition: transform 0.6s ease;
+}
+
+.carousel-gallery .carousel-gallery-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.carousel-gallery .carousel-gallery-photo,
+.carousel-gallery .carousel-gallery-quote {
+  margin: 0;
+}
+
+/* photo slides */
+.carousel-gallery .carousel-gallery-photo {
+  padding-bottom: 24px;
+}
+
+.carousel-gallery .carousel-gallery-image {
+  line-height: 0;
+}
+
+.carousel-gallery .carousel-gallery-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 640px;
+
+  /* source serves 3:2 crops below 992px and uncropped renditions above */
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.carousel-gallery .carousel-gallery-caption {
+  padding: 8px 0;
+  border-bottom: 1px solid #d2d2d2;
+  font-size: var(--body-font-size-s);
+  line-height: 20px;
+}
+
+.carousel-gallery .carousel-gallery-caption p {
+  margin: 0;
+}
+
+/* quote slides */
+.carousel-gallery .carousel-gallery-content {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.carousel-gallery .carousel-gallery-quote-text {
+  margin: 0 0 24px;
+  color: var(--brand-orange);
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+}
+
+.carousel-gallery .carousel-gallery-quote-text p {
+  margin: 0 0 24px;
+}
+
+.carousel-gallery .carousel-gallery-quote-text p:last-child {
+  margin-bottom: 0;
+}
+
+.carousel-gallery .carousel-gallery-quote-text p:first-child::before {
+  content: '\201C';
+}
+
+.carousel-gallery .carousel-gallery-quote-text p:last-child::after {
+  content: '\201D';
+}
+
+.carousel-gallery .carousel-gallery-quote-text::after {
+  content: '';
+  display: block;
+  width: 36px;
+  height: 2px;
+  margin-top: 24px;
+  background-color: var(--brand-orange);
+}
+
+.carousel-gallery .carousel-gallery-quote-attribution {
+  font-size: var(--body-font-size-m);
+  line-height: 28px;
+}
+
+.carousel-gallery .carousel-gallery-quote-attribution > * {
+  margin: 0;
+}
+
+.carousel-gallery .carousel-gallery-quote-attribution > :last-child {
+  margin-bottom: 24px;
+}
+
+.carousel-gallery .carousel-gallery-quote-name,
+.carousel-gallery .carousel-gallery-quote-name strong,
+.carousel-gallery .carousel-gallery-quote-name b {
+  font-weight: 300;
+}
+
+/* controls: dots centred, prev / play-pause / next right-aligned on one row */
+.carousel-gallery .carousel-gallery-controls {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 12px;
+  margin: 24px 0;
+  padding: 0 16px;
+}
+
+.carousel-gallery .carousel-gallery-controls[hidden] {
+  display: none;
+}
+
+.carousel-gallery .carousel-gallery-indicators {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  display: flex;
+  gap: 24px;
+  transform: translateX(-50%);
+}
+
+.carousel-gallery .carousel-gallery-controls button {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--brand-orange);
+  font: inherit;
+  line-height: 0;
+  cursor: pointer;
+}
+
+.carousel-gallery .carousel-gallery-controls .carousel-gallery-indicator {
+  display: block;
+  box-sizing: border-box;
+  width: 12px;
+  height: 12px;
+  border: 2px solid var(--brand-orange);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  cursor: default;
+}
+
+.carousel-gallery .carousel-gallery-controls .carousel-gallery-indicator[aria-current='true'] {
+  background-color: var(--brand-orange);
+}
+
+.carousel-gallery .carousel-gallery-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.carousel-gallery .carousel-gallery-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+}
+
+.carousel-gallery .carousel-gallery-buttons svg {
+  display: block;
+  width: 12px;
+  height: 12px;
+}
+
+/* prev / next only shown on desktop */
+.carousel-gallery .carousel-gallery-buttons .carousel-gallery-prev,
+.carousel-gallery .carousel-gallery-buttons .carousel-gallery-next {
+  display: none;
+}
+
+/* play icon when paused, pause icon when playing */
+.carousel-gallery .carousel-gallery-icon-pause,
+.carousel-gallery.is-playing .carousel-gallery-icon-play {
+  display: none;
+}
+
+.carousel-gallery.is-playing .carousel-gallery-icon-pause {
+  display: inline;
+}
+
+.carousel-gallery .carousel-gallery-controls button:focus-visible {
+  outline: 1px auto var(--text-color);
+  outline-offset: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel-gallery .carousel-gallery-slides {
+    transition: none;
+  }
+}
+
+/* source switches to its desktop carousel at 992px */
+@media (width >= 992px) {
+  .carousel-gallery .carousel-gallery-image img {
+    aspect-ratio: auto;
+  }
+
+  .carousel-gallery .carousel-gallery-quote-text {
+    font-size: 40px;
+    line-height: 56px;
+    letter-spacing: 0.4px;
+  }
+
+  .carousel-gallery .carousel-gallery-buttons .carousel-gallery-prev,
+  .carousel-gallery .carousel-gallery-buttons .carousel-gallery-next {
+    display: flex;
+  }
+}

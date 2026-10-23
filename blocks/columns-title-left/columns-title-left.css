@@ -1,0 +1,161 @@
+/* columns-title-left: narrow title column beside body copy.
+   Default (one instance per section): source m-bespoke-layout--30-60-layout.
+   .stacked (several instances in one section): source
+   cmp-container--css-grid--section-layout (ruled 1/3 + 2/3 list). */
+
+.columns-title-left {
+  position: relative;
+  color: var(--text-color);
+}
+
+.columns-title-left .columns-title-left-row {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.columns-title-left .columns-title-left-title > :first-child,
+.columns-title-left .columns-title-left-body > :first-child {
+  margin-top: 0;
+}
+
+/* thin grey rule between consecutive steps (source separator: 32px
+   padding around a 1px #d2d2d2 rule, full-bleed on mobile). Offsets
+   absorb the section padding so the rule sits where the source does. */
+.columns-title-left.follows-sibling:not(.stacked) {
+  margin-top: calc(32px - var(--section-padding));
+  padding-top: calc(32px + var(--section-padding));
+}
+
+.columns-title-left.follows-sibling:not(.stacked)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: calc(-1 * var(--content-gutter));
+  left: calc(-1 * var(--content-gutter));
+  height: 1px;
+  background-color: #d2d2d2;
+}
+
+/* rows inside one instance get the same rule */
+.columns-title-left .columns-title-left-row + .columns-title-left-row {
+  margin-top: calc(32px + var(--section-padding));
+  border-top: 1px solid #d2d2d2;
+  padding-top: calc(32px + var(--section-padding));
+}
+
+/* optional orange line icon above the heading */
+.columns-title-left .columns-title-left-icon {
+  margin-bottom: 12px;
+  line-height: 0;
+}
+
+.columns-title-left .columns-title-left-icon .icon,
+.columns-title-left .columns-title-left-icon img,
+.columns-title-left .columns-title-left-icon svg {
+  display: block;
+  width: 72px;
+  height: 72px;
+  object-fit: contain;
+}
+
+/* icon steps use a light sans-serif step title */
+.columns-title-left .columns-title-left-title.has-icon h2,
+.columns-title-left .columns-title-left-title.has-icon h3 {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 300;
+  line-height: var(--heading-line-height-l);
+  letter-spacing: normal;
+}
+
+/* optional stat tile: grey box, large orange figure, orange bottom border */
+.columns-title-left .columns-title-left-stat {
+  display: block;
+  box-sizing: border-box;
+  border-bottom: 2px solid var(--brand-orange);
+  padding: 16px 16px 32px;
+  background-color: var(--brand-grey-90);
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.columns-title-left a.columns-title-left-stat:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.columns-title-left .columns-title-left-stat p {
+  margin: 0;
+}
+
+.columns-title-left .columns-title-left-stat-value {
+  color: var(--brand-orange);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 300;
+  line-height: var(--heading-line-height-xl);
+}
+
+.columns-title-left .columns-title-left-stat-value strong,
+.columns-title-left .columns-title-left-stat-value b {
+  font-weight: 300;
+}
+
+.columns-title-left .columns-title-left-stat-caption {
+  font-size: var(--body-font-size-s);
+  line-height: 24px;
+  letter-spacing: 0.28px;
+}
+
+.columns-title-left .columns-title-left-body img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* source CTA: ochre 4px-radius button, darker ochre on hover */
+main .columns-title-left a.button.primary:any-link {
+  border-color: var(--brand-ochre-dark);
+  background-color: var(--brand-ochre-dark);
+  color: #fff;
+}
+
+main .columns-title-left a.button.primary:hover,
+main .columns-title-left a.button.primary:focus-visible {
+  border-color: #af2b11;
+  background-color: #af2b11;
+  color: #fff;
+}
+
+/* stacked list layout: every instance carries the top rule */
+.columns-title-left.stacked {
+  border-top: 1px solid #d2d2d2;
+  padding: 56px 0;
+}
+
+.columns-title-left.stacked.follows-sibling {
+  margin-top: 16px;
+}
+
+.columns-title-left.stacked .columns-title-left-row {
+  gap: 16px;
+}
+
+@media (width >= 900px) {
+  .columns-title-left .columns-title-left-row {
+    display: grid;
+    grid-template-columns: 33% 58%;
+    gap: 24px 9%;
+  }
+
+  .columns-title-left.follows-sibling:not(.stacked)::before {
+    right: 0;
+    left: 0;
+  }
+
+  .columns-title-left.stacked .columns-title-left-row {
+    grid-template-columns: 1fr 2fr;
+    gap: 56px 132px;
+  }
+}

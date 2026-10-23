@@ -314,3 +314,69 @@ main .section.light-grey,
 main .section.highlight {
   background-color: var(--brand-grey-90);
 }
+
+main .section.sand {
+  background-color: var(--brand-sand);
+}
+
+/*
+ * split sections (source 30-60 / 60-30 layouts), desktop only:
+ *   split-heading: section heading in a 33% column, everything else in a 58% column
+ *   split-aside:   content in a 58% column, an aside box (cta / icon tile) in a 33% column
+ * The section keeps its full-width background; the grid is inset to the content column.
+ */
+@media (width >= 900px) {
+  main > .section.split-heading,
+  main > .section.split-aside {
+    display: grid;
+    align-items: start;
+    column-gap: 9%;
+    padding-inline: max(var(--content-gutter), calc((100% - var(--content-max-width)) / 2 + var(--content-gutter)));
+  }
+
+  main > .section.split-heading {
+    grid-template-columns: 33% 58%;
+  }
+
+  main > .section.split-aside {
+    grid-template-columns: 58% 33%;
+  }
+
+  main > .section.split-heading > div,
+  main > .section.split-aside > div {
+    min-width: 0;
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  main > .section.split-heading > div,
+  main > .section.split-heading > .default-content-wrapper:first-child > * {
+    grid-column: 2;
+  }
+
+  /* only the leading heading moves to the narrow column */
+  main > .section.split-heading > .default-content-wrapper:first-child {
+    display: contents;
+  }
+
+  main > .section.split-heading > .default-content-wrapper:first-child > :first-child {
+    grid-column: 1;
+    grid-row: 1 / span 30;
+  }
+
+  main > .section.split-aside > div {
+    grid-column: 1;
+  }
+
+  main > .section.split-aside > .cards-cta-wrapper,
+  main > .section.split-aside > .cards-icon-tile-wrapper {
+    grid-column: 2;
+    grid-row: 1 / span 30;
+  }
+
+  main > .section.split-heading > .default-content-wrapper > p,
+  main > .section.split-aside > .default-content-wrapper > p {
+    max-width: none;
+  }
+}

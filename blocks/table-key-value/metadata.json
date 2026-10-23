@@ -1,0 +1,54 @@
+{
+  "variantName": "table-key-value",
+  "baseBlock": "table",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/news-and-events/drug-discovery-symposium.html",
+  "visualCharacteristics": {
+    "stylingNotes": "White background, padding top/bottom, 60/30 layout (m-bespoke-layout--60-30-layout, order-r-l). Main column: three intro paragraphs with a bulleted list (Target Identification, Hit to Lead, Translation), then serif H2 \"Event Details\" and a two-column key/value table (bold label cells Date, Time, Location, Registration, Catering; thin grey borders around every row, white background). Side column: orange (ochre, cmp-call-to-action--ochre) box with white linked title \"View the full event program\" and a white external-link icon, linking to the program PDF. The separators before/after the table are spacing rules, not content.",
+    "variantRationale": "Two-column label/value details table, bold label column, thin grey border on every row, no header row. No table variant exists yet",
+    "purpose": "Two-column label/value table, bold labels as row headers, thin borders on every row"
+  },
+  "contentPattern": {
+    "summary": "Tabular key/value data (label | value rows); EDS has no default-content table, so it needs the table block. Labels stay as text, not headings",
+    "structure": "one row per entry: [label | value]"
+  },
+  "blockContent": {
+    "description": "Event details table: Date | Thursday, 20 November; Time | 10 am - 5 pm; Location | linked \"Messel Lecture Theatre, Sydney Nanoscience Hub (SNH), Physics Road, The University of Sydney\" (Google Maps); Registration | Free, registration essential by 18 November; Catering | Morning tea, lunch and networking session refreshments",
+    "rows": [
+      [
+        "Date",
+        "Thursday, 20 November"
+      ],
+      [
+        "Time",
+        "10 am - 5 pm"
+      ],
+      [
+        "Location",
+        "Link: Messel Lecture Theatre, Sydney Nanoscience Hub (SNH), Physics Road, The University of Sydney"
+      ],
+      [
+        "Registration",
+        "Free, registration essential by 18 November"
+      ],
+      [
+        "Catering",
+        "Morning tea, lunch and networking session refreshments"
+      ]
+    ],
+    "notes": "Five data rows, two cells each, no header row. The label column is bold (CSS or strong); every row has a thin grey border."
+  },
+  "options": [],
+  "memberVariantIds": [
+    "table-key-value"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/news-and-events/drug-discovery-symposium"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-23T03:32:53.142Z"
+  },
+  "reuseGuidance": "Use for label/value details (event details, facts). One row per entry: label | value; values may contain links. No header row.",
+  "usageDescription": "Two-column label/value table, bold labels as row headers, thin borders on every row"
+}

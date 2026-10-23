@@ -1,0 +1,39 @@
+{
+  "variantName": "carousel-gallery",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/partnerships.html",
+  "visualCharacteristics": {
+    "stylingNotes": "White, 48px padding; one slide per view, six slides alternating a captioned full-width photo and a text quote (serif quotation, short orange rule, bold name and position); orange outline pagination dots centred, play/pause and prev/next arrows right.",
+    "variantRationale": "One slide per view mixing captioned full-width photos and text quotes, outline dots, play/pause and arrows. carousel-news is a 3-up news card slider (<80%)",
+    "purpose": "One-slide-per-view carousel with dots, prev/next and play/pause; autoplay is off when the user prefers reduced motion"
+  },
+  "contentPattern": {
+    "summary": "Interactive slider; quotations stay in their slides because they are inside an interactive component",
+    "structure": "one row per slide: [image | caption] for photos, [empty | quotation paragraph(s), bold name, position] for quotes"
+  },
+  "blockContent": {
+    "description": "Six slides: photo \"Endo Axiom co-founders...\" ; quote Dr Nicholas Hunt ; photo \"DDI-Pharos MOU Signing Ceremony\" ; quote Prof Michael Kassiou ; photo \"Kinoxis Therapeutics partnership with Boehringer Ingelheim\" ; quote Prof Mark Scott / Carousel, 4 captioned photo slides: ddi-ecr-winners.jpeg \"2023 DDI ECR Award winners\" (alt \"4 DDI ECR winners\"); ddi-phd-workshop.jpeg ./images/b0e39f63e68a10a261949d7696a6d671.jpg \"'I have a PhD now what' workshop\"; ddi-lecture.jpeg \"DDI ECR Symposium\" (alt \"DDI lecture event\"); ddi-ecr-symposium.jpeg \"DDI ECR Symposium\". Unlisted images use source URLs under https://www.sydney.edu.au/content/dam/corporate/images/research/drug-discovery-initiative/",
+    "rows": [
+      [
+        "Image",
+        "Text content"
+      ]
+    ],
+    "notes": "Six rows in source order. Photo slides: image | caption paragraph. Quote slides: empty image cell | quotation paragraph (not a heading) + attribution name (strong) + position. Quotations stay inside the carousel."
+  },
+  "options": [],
+  "memberVariantIds": [
+    "carousel-gallery"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/partnerships",
+      "/drug-discovery/get-involved/researcher-development"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-10-23T03:32:53.122Z"
+  },
+  "reuseGuidance": "Use for a one-slide-per-view gallery of photos and/or quotations. Photo row: image | caption. Quote row: leave the image cell empty; put the quotation, then the name in bold, then the position as separate paragraphs.",
+  "usageDescription": "One-slide-per-view carousel with dots, prev/next and play/pause; autoplay is off when the user prefers reduced motion"
+}

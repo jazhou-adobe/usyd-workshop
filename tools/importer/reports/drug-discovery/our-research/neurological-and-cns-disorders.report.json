@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/our-research/neurological-and-cns-disorders.html",
+  "path": "drug-discovery/our-research/neurological-and-cns-disorders",
+  "timestamp": "2026-10-23T05:20:37.181Z",
+  "title": "Neurological and CNS Disorders - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "tabs-underline",
+    "tabs-underline",
+    "accordion-plus",
+    "quote-portrait",
+    "columns-title-left",
+    "columns-contact"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "variantName": "quote-portrait",
+  "baseBlock": "quote",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/our-research/neurological-and-cns-disorders.html",
+  "visualCharacteristics": {
+    "stylingNotes": [
+      "Sand / light peach (#fcede2-ish, m-bespoke-layout--bg-sand) band with generous top/bottom padding. Compact testimonial: small round portrait top-left, quotation in large body text, short orange rule, bold name \"A/Prof Eleanor Drummond\" and position line."
+    ],
+    "variantRationale": [
+      "Compact testimonial: small round portrait, quotation, short orange rule, bold name + position; no existing quote variant (carousel-gallery quote slides are inside a carousel)"
+    ],
+    "purpose": "Compact testimonial: round portrait, quotation, short orange rule, bold name and position"
+  },
+  "contentPattern": {
+    "summary": "A quotation outside an interactive component is a quote block; portrait and attribution belong in it",
+    "structure": "row 1 = portrait image; row 2 = quotation paragraph(s) without quote marks; row 3 = name (strong) paragraph + position paragraph"
+  },
+  "blockContent": {
+    "rows": [
+      [
+        "Portrait image"
+      ],
+      [
+        "Quotation paragraph(s)"
+      ],
+      [
+        "Attribution: name (strong) + position paragraph"
+      ]
+    ],
+    "notes": "Quotation text without the typographic quote marks, not a heading; portrait and attribution live inside the block. Name was an H5/cite in source - author as strong text, not a heading.",
+    "occurrences": [
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/neurological-and-cns-disorders.html",
+        "description": "Quote: round portrait dr-eleanor-drummond-headshot.jpg (./images/4e355db5319dac057af052d01b51e95d.jpg), quotation \"There is a consensus that for the last thirty years...Alzheimer's brain too.\", attribution \"A/Prof Eleanor Drummond\" + \"ADP Co-leader, Associate Professor of Neuroscience and Bluesand Senior Research Fellow\""
+      }
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [
+    "quote-portrait"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/our-research/neurological-and-cns-disorders"
+    ],
+    "reuseCount": 1
+  },
+  "reuseGuidance": "Use for one standalone quotation with a person's portrait. Do not add typographic quote marks; the block adds them. Quotes inside carousels belong to the carousel block.",
+  "usageDescription": "Single testimonial from a researcher or partner, typically in a sand-coloured section (section metadata Style: sand).",
+  "sectionMetadata": [
+    "sand"
+  ]
+}

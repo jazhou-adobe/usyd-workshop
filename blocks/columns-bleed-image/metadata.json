@@ -4,13 +4,17 @@
   "canonicalModel": "standalone",
   "sourceUrl": "https://www.sydney.edu.au/drug-discovery/",
   "visualCharacteristics": {
-    "stylingNotes": "Lilac (jacaranda) panel left with H2, two paragraphs and two arrow links separated by rules; full-bleed lab photo right overlapping panel.",
+    "stylingNotes": [
+      "Lilac (jacaranda) panel left with H2, two paragraphs and two arrow links separated by rules; full-bleed lab photo right overlapping panel.",
+      "Sandstone (light peach) panel left with H2 \"Our network\", two paragraphs and a \"Become a member\" underlined arrow link; member-event photo right, bleeding to the viewport edge and overlapping the panel bottom.",
+      "Full-width lilac (jacaranda, #d6dbeb) band; image LEFT inset inside the band (cmp-teaser--std, image-left, not overlapping); right: uppercase date eyebrow 'Thursday, 10 September', serif H2 'I Have a PhD, Now What?', paragraph and an underlined orange 'Register' text link."
+    ],
     "variantRationale": "Lilac text panel beside full-bleed overlapping image",
     "purpose": "Lilac text panel beside full-bleed overlapping image"
   },
   "contentPattern": {
     "summary": "Side-by-side text and image layout",
-    "structure": "one row with two cells: [H2, paragraphs, standalone links (one per paragraph) | image]; put the image cell first for image-left"
+    "structure": "one row with two cells: [optional date eyebrow paragraph, H2, paragraphs, standalone links (one per paragraph) | image]. Image cell second = text panel beside a bleeding, overlapping image; image cell first = event/news teaser with the image inset inside the band. One link renders as an underlined text link, two or more as a ruled arrow-link list"
   },
   "blockContent": {
     "description": "H2 'Our research', two paragraphs, links 'Drug Discovery research' and 'What is drug discovery?' beside a lab image",
@@ -23,10 +27,27 @@
     ],
     "notes": "section-3: 2 cells [text+links | image]; section-6: 3 cells [H2 | icon link list | Email/Media enquiries headings + mailto links]"
   },
-  "options": [],
+  "options": [
+    {
+      "class": "sandstone",
+      "label": "Sandstone"
+    }
+  ],
   "memberVariantIds": [
     "columns-bleed-image"
   ],
-  "usage": "Feature panel: heading, short paragraphs and a ruled list of arrow links beside a large image that bleeds to the viewport edge.",
-  "reuseGuidance": "Use for a highlighted topic that links onward. Put the image cell second for image-right (or first for image-left). Set the panel colour with section metadata or design styling."
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/about-us",
+      "/drug-discovery/news-and-events"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-10-23T03:14:50.000Z"
+  },
+  "reuseGuidance": "Use for a highlighted topic that links onward. Put the image cell second for image-right with a bleeding image, or first for an event/news teaser with the image inset in the band. Add the sandstone option for a sandstone panel (default is jacaranda).",
+  "usageDescription": "Feature panel: heading, short paragraphs and a ruled list of arrow links beside a large image that bleeds to the viewport edge.",
+  "sourceUrls": [
+    "https://www.sydney.edu.au/drug-discovery/about-us.html",
+    "https://www.sydney.edu.au/drug-discovery/news-and-events.html"
+  ]
 }

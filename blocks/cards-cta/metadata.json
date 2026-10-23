@@ -1,0 +1,35 @@
+{
+  "variantName": "cards-cta",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/partnerships.html",
+  "visualCharacteristics": {
+    "stylingNotes": "Call-to-action box placed beside intro text in a 60/30 split: light grey box with linked title, optional \"Find out more\" description and an orange arrow; the ochre option is an orange box with white text and a white external-link icon.",
+    "variantRationale": "Single call-to-action box with linked title and arrow, no image; colour is an option (grey default, ochre)",
+    "purpose": "Call-to-action link box with heading text and arrow"
+  },
+  "contentPattern": {
+    "summary": "Styled call-to-action card placed beside the default content; the whole box is a link",
+    "structure": "one row per box: [title (linked), optional description]"
+  },
+  "blockContent": {
+    "description": "Grey box \"Researcher development programs\" / \"Find out more\"; ochre box \"View the full event program\" linking to a PDF",
+    "rows": [
+      [
+        "Linked title, description"
+      ]
+    ],
+    "notes": "One card, no image"
+  },
+  "options": [
+    {
+      "class": "ochre",
+      "label": "Ochre"
+    }
+  ],
+  "memberVariantIds": [
+    "cards-cta"
+  ],
+  "usage": "A single (or a few) call-to-action boxes with a linked title and optional short description; the whole box is clickable and shows an arrow, or an external-link icon when the link leaves the site or points to a file.",
+  "reuseGuidance": "Use beside default content in a split section to promote one destination. Add the ochre option (Cards CTA (ochre)) for the orange box. Use cards-icon-tile when the call to action has an icon and no box."
+}

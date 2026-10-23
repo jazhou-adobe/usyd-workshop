@@ -1,0 +1,48 @@
+{
+  "variantName": "hero-image-overlay",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/news-and-events/drug-discovery-symposium.html",
+  "visualCharacteristics": {
+    "stylingNotes": [
+      "Full-bleed photo (pipette dripping into a glass test tube; m-hero--style-1, focal point 50%) with text overlaid on the left: white italic serif H1 \"Drug Discovery Symposium 2025\", short orange rule, white subheading \"Exploring and celebrating the latest developments in the drug discovery space.\" and an orange filled button \"Register to attend\" (Eventbrite). Orange bottom border line. Source renders the title as both H1 (desktop) and H2 (mobile); author it once as H1."
+    ],
+    "variantRationale": [
+      "Text (H1, orange rule, subheading, orange button) overlaid on the left of a full-bleed photo. hero-orange-band puts the photo above a solid orange band and its reuseGuidance sends text-over-image to another hero; hero-orange-split is an orange panel beside a photo. Both are under 50% similar"
+    ],
+    "purpose": "Full-bleed photo with white H1, orange rule, subheading and orange CTA overlaid on the left"
+  },
+  "contentPattern": {
+    "summary": "Full-bleed hero: H1, subheading and CTA overlaid on a background image; the background belongs to the block, so no section metadata",
+    "structure": "row 1 = background image; row 2 = H1 title, subheading paragraph, optional CTA link (its own paragraph)"
+  },
+  "blockContent": {
+    "rows": [
+      [
+        "Background image"
+      ],
+      [
+        "H1 title, subheading paragraph, CTA link"
+      ]
+    ],
+    "notes": "Row 1: ./images/f38b4b745037acd4a083bf88d71205d8.jpg. Row 2: H1 \"Drug Discovery Symposium 2025\"; paragraph \"Exploring and celebrating the latest developments in the drug discovery space.\"; link \"Register to attend\" (Eventbrite), styled as the primary (orange) button.",
+    "occurrences": [
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/news-and-events/drug-discovery-symposium.html",
+        "description": "Hero image (./images/f38b4b745037acd4a083bf88d71205d8.jpg), H1 \"Drug Discovery Symposium 2025\", subheading paragraph, CTA \"Register to attend\" -> https://www.eventbrite.com.au/e/drug-discovery-symposium-2025-tickets-1653598310059?aff=oddtdtcreator"
+      }
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [
+    "hero-image-overlay"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/news-and-events/drug-discovery-symposium"
+    ],
+    "reuseCount": 1
+  },
+  "reuseGuidance": "Use when the title sits on top of the photo. For a solid orange panel beside or below a photo use hero-orange-split or hero-orange-band.",
+  "usageDescription": "Event or campaign hero: title, short orange rule, subheading and a single orange button over a full-bleed photo with an orange bottom border."
+}

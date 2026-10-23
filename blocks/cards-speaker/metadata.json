@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-speaker",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/news-and-events/drug-discovery-symposium.html",
+  "visualCharacteristics": {
+    "stylingNotes": "White background. Stacked speaker rows (30/60): rectangular landscape photo left, H3 name (sans, regular weight) and bio paragraphs with orange underlined inline links right; thin grey rules between rows.",
+    "variantRationale": "Stacked full-width rows with a large rectangular photo, H3 name and long bio with inline links; cards-profile (small round portrait, linked name) and cards-portrait (3-up grid) are under 80% similar",
+    "purpose": "Speaker/biography rows with photo beside name and bio"
+  },
+  "contentPattern": {
+    "summary": "Repeating photo beside name and bio, one item per speaker, separated by rules",
+    "structure": "one row per speaker: [photo (optional) | H3 name, bio paragraphs]"
+  },
+  "blockContent": {
+    "description": "Three invited speakers, each with photo, H3 name and two bio paragraphs with inline links",
+    "rows": [
+      [
+        "Speaker photo",
+        "H3 name + bio paragraphs"
+      ]
+    ],
+    "notes": "The photo cell may be empty; rules between rows are CSS"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "cards-speaker"
+  ],
+  "usage": "List of speakers or people with longer biographies: photo on the left, name heading and bio paragraphs (with inline links) on the right, separated by thin rules. Rows without a photo render text-only.",
+  "reuseGuidance": "Use for invited speakers, panel members or any people list with full bios. Inline links in the bio stay individually clickable (rows are not whole-row links). Use cards-profile for short linked name + position rows."
+}

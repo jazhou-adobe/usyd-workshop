@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/partnerships.html",
+  "path": "drug-discovery/partnerships",
+  "timestamp": "2026-10-23T05:21:03.236Z",
+  "title": "Partnerships - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "accordion-plus",
+    "carousel-gallery",
+    "cards-cta",
+    "columns-title-left",
+    "columns-contact"
+  ]
+}

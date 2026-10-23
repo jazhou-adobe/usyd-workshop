@@ -1,0 +1,165 @@
+/* accordion-plus: source .cmp-wrapper-accordion (AEM core accordion).
+   Items are separated by a 1px #d2d2d2 rule on each button; the last
+   item closes with the same rule. Orange 16px plus becomes a minus. */
+
+.accordion-plus {
+  padding-bottom: 16px;
+  color: var(--text-color);
+}
+
+/* below a columns-title-left block (source: 32px small separator) */
+.columns-title-left-wrapper + .accordion-plus-wrapper > .accordion-plus {
+  margin-top: 32px;
+}
+
+.accordion-plus .accordion-plus-item:last-child {
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.accordion-plus .accordion-plus-heading {
+  margin: 0;
+  padding: 0;
+}
+
+.accordion-plus .accordion-plus-button {
+  display: flex;
+  flex-flow: row;
+  align-items: baseline;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding: 16px 0;
+  border: 0;
+  border-top: 1px solid #d2d2d2;
+  border-radius: 0;
+  background: none;
+  color: #000;
+  font-family: var(--body-font-family);
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.15;
+  text-align: left;
+  cursor: pointer;
+  transition: 400ms;
+}
+
+.accordion-plus .accordion-plus-button:focus-visible {
+  outline: 1px auto rgb(16 16 16);
+  outline-offset: 0;
+}
+
+.accordion-plus .accordion-plus-title {
+  display: block;
+  padding-right: 10px;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 28px;
+  letter-spacing: 0;
+}
+
+/* plus icon: two 2px bars in a 16px box; the vertical bar hides when open */
+.accordion-plus .accordion-plus-icon {
+  position: relative;
+  display: block;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+}
+
+.accordion-plus .accordion-plus-icon::before,
+.accordion-plus .accordion-plus-icon::after {
+  content: '';
+  position: absolute;
+  background-color: var(--brand-ochre-dark);
+}
+
+.accordion-plus .accordion-plus-icon::before {
+  top: 7px;
+  left: 0;
+  width: 16px;
+  height: 2px;
+}
+
+.accordion-plus .accordion-plus-icon::after {
+  top: 0;
+  left: 7px;
+  width: 2px;
+  height: 16px;
+}
+
+.accordion-plus .accordion-plus-button[aria-expanded='true'] .accordion-plus-icon::after {
+  display: none;
+}
+
+.accordion-plus .accordion-plus-panel {
+  overflow: hidden;
+}
+
+.accordion-plus .accordion-plus-panel[hidden] {
+  display: none;
+}
+
+.accordion-plus .accordion-plus-panel-inner {
+  padding: 0 0 16px;
+}
+
+.accordion-plus .accordion-plus-panel p {
+  margin: 0 0 24px;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+.accordion-plus .accordion-plus-panel ul,
+.accordion-plus .accordion-plus-panel ol {
+  margin: 0 0 24px;
+}
+
+.accordion-plus .accordion-plus-panel a:any-link {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+@media (width >= 768px) {
+  .accordion-plus .accordion-plus-panel-inner {
+    padding: 16px 0;
+  }
+}
+
+@media (width >= 900px) {
+  /* source accordions sit in a 58% column of the 1168px content area */
+  .accordion-plus {
+    max-width: 58%;
+    padding-bottom: 24px;
+  }
+
+  /* below a columns-title-left block, line up with its right column */
+  .columns-title-left-wrapper + .accordion-plus-wrapper > .accordion-plus {
+    margin-left: 42%;
+  }
+
+  /* moved into an empty columns-title-left body column by the block JS */
+  .columns-title-left-body > .accordion-plus-wrapper > .accordion-plus {
+    max-width: none;
+  }
+
+  .accordion-plus .accordion-plus-button {
+    padding: 24px 0;
+    font-size: 24px;
+  }
+
+  .accordion-plus .accordion-plus-button:hover {
+    border-top-color: var(--text-color);
+  }
+
+  .accordion-plus .accordion-plus-title {
+    font-size: var(--heading-font-size-m);
+  }
+
+  .accordion-plus .accordion-plus-panel-inner {
+    padding: 8px 0 24px;
+  }
+}

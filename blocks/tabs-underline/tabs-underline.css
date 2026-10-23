@@ -1,0 +1,155 @@
+/* tabs-underline -- values from source .cmp-wrapper-tabs computed styles */
+.tabs-underline {
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: 24px;
+}
+
+/* tab bar: 1px rule under a horizontally scrollable tablist */
+.tabs-underline .tabs-underline-nav {
+  position: relative;
+  margin: 0 0 32px;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.tabs-underline .tabs-underline-list {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.tabs-underline .tabs-underline-list::-webkit-scrollbar {
+  display: none;
+}
+
+.tabs-underline .tabs-underline-tab {
+  position: relative;
+  flex: 0 0 auto;
+  margin: 0;
+  padding: 16px 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 300;
+  line-height: 24px;
+  text-align: center;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.4s;
+}
+
+/* active indicator: 2px bar on the bottom edge of the tab */
+.tabs-underline .tabs-underline-tab::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  background-color: var(--brand-ochre-dark);
+  opacity: 0;
+}
+
+.tabs-underline .tabs-underline-tab:hover,
+.tabs-underline .tabs-underline-tab[aria-selected='true'] {
+  color: var(--brand-ochre-dark);
+}
+
+.tabs-underline .tabs-underline-tab[aria-selected='true']::after {
+  opacity: 1;
+}
+
+.tabs-underline .tabs-underline-tab:focus-visible {
+  color: var(--brand-ochre-dark);
+  outline: auto;
+  outline-color: var(--brand-ochre-dark);
+}
+
+.tabs-underline .tabs-underline-tab:focus-visible::after {
+  background-color: var(--text-color);
+  opacity: 1;
+}
+
+/* overflow scroll buttons (mobile): chevron over a white fade */
+.tabs-underline .tabs-underline-scroll {
+  position: absolute;
+  top: 14px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 28px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: linear-gradient(270deg, #fff 0%, rgb(255 255 255 / 75%) 75%, rgb(0 0 0 / 0%) 100%);
+  color: #717171;
+  cursor: pointer;
+}
+
+.tabs-underline .tabs-underline-scroll[hidden] {
+  display: none;
+}
+
+.tabs-underline .tabs-underline-scroll svg {
+  display: block;
+  width: 24px;
+  height: auto;
+}
+
+.tabs-underline .tabs-underline-scroll-next {
+  right: 0;
+}
+
+.tabs-underline .tabs-underline-scroll-prev {
+  left: 0;
+  background: linear-gradient(90deg, #fff 0%, rgb(255 255 255 / 75%) 75%, rgb(0 0 0 / 0%) 100%);
+}
+
+.tabs-underline .tabs-underline-scroll-prev svg {
+  transform: scaleX(-1);
+}
+
+/* panels */
+.tabs-underline .tabs-underline-panel {
+  display: flow-root;
+  line-height: var(--body-line-height);
+}
+
+.tabs-underline .tabs-underline-panel[hidden] {
+  display: none;
+}
+
+.tabs-underline .tabs-underline-panel:focus-visible {
+  outline: 1px auto var(--text-color);
+}
+
+.tabs-underline .tabs-underline-panel p {
+  margin: 0 0 24px;
+}
+
+.tabs-underline .tabs-underline-panel ul {
+  display: flow-root;
+  margin: 0 0 16px;
+  padding: 0 0 0 28px;
+  list-style: none;
+}
+
+.tabs-underline .tabs-underline-panel li {
+  position: relative;
+  margin: 0 0 8px;
+  padding: 0 0 0 16px;
+}
+
+.tabs-underline .tabs-underline-panel li::before {
+  content: '\2022';
+  position: absolute;
+  top: 0;
+  left: 0;
+}

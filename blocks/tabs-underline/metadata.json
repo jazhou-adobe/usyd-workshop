@@ -1,0 +1,39 @@
+{
+  "variantName": "tabs-underline",
+  "baseBlock": "tabs",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/about-us.html",
+  "visualCharacteristics": {
+    "stylingNotes": "White background, 30/60 layout: H2 \"Our people\" in the left column; right column has H3 \"Director\", a profile row (round portrait, name \"Professor Michael Kassiou\" linked to profiles.sydney.edu.au, title, chevron) and tabs (Operations team, Management group, ECR Committee) with orange active underline, each panel an intro paragraph plus a bulleted list of people.",
+    "variantRationale": "Text tab labels with an orange active underline over a rule, panels of paragraph + bulleted list; no existing tabs variant",
+    "purpose": "Accessible tablist (arrow/Home/End keys) with an orange underline on the active tab over a grey rule"
+  },
+  "contentPattern": {
+    "summary": "Interactive component: three tab labels each switching a panel",
+    "structure": "one row per tab: [tab label | panel content (paragraphs, lists)]"
+  },
+  "blockContent": {
+    "description": "Tabs: Operations team (intro + 3 names), Management group (intro + 12 names, many linked), ECR Committee (intro + 11 names) / Tabs: \"Research overview\" (paragraph with Faculty of Medicine and Health link) | \"Research experts\" (8 project bullets with led-by names, several linked) / Tabs: \"Research overview\" (paragraph with Brain and Mind Centre link) | \"Research experts\" (list: Professor Michael Kassiou, Dr Jonathan Danon)",
+    "rows": [
+      [
+        "Tab label",
+        "Tab content (paragraph + list)"
+      ]
+    ],
+    "notes": "One row per tab: Operations team, Management group, ECR Committee"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "tabs-underline"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/about-us",
+      "/drug-discovery/our-research/neurological-and-cns-disorders"
+    ],
+    "reuseCount": 2,
+    "lastUsed": "2026-10-23T03:32:53.086Z"
+  },
+  "reuseGuidance": "Use for 2+ switchable text panels with short labels. One row per tab: label | content. Keep labels short; first tab opens by default.",
+  "usageDescription": "Accessible tablist (arrow/Home/End keys) with an orange underline on the active tab over a grey rule"
+}

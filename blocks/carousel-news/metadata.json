@@ -26,6 +26,13 @@
   "memberVariantIds": [
     "carousel-news"
   ],
-  "usage": "News/article slider showing 3 cards per view on desktop (2 on tablet, 1 on mobile) with page dots and prev/next arrows.",
-  "reuseGuidance": "Use for lists of related news or stories longer than one row. One row per article: image | linked title + description."
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/news-and-events"
+    ],
+    "reuseCount": 1,
+    "lastUsed": "2026-10-23T03:14:50.000Z"
+  },
+  "reuseGuidance": "Use for lists of related news or stories longer than one row. One row per article: image | linked title + description.",
+  "usageDescription": "News/article slider showing 3 cards per view on desktop (2 on tablet, 1 on mobile) with page dots and prev/next arrows."
 }

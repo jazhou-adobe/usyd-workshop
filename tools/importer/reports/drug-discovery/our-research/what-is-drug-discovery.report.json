@@ -1,0 +1,17 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/our-research/what-is-drug-discovery-.html",
+  "path": "drug-discovery/our-research/what-is-drug-discovery",
+  "timestamp": "2026-10-23T05:20:57.698Z",
+  "title": "What is drug discovery? - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "columns-title-left",
+    "columns-title-left",
+    "columns-title-left",
+    "columns-title-left",
+    "columns-title-left",
+    "columns-contact"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/get-involved/researcher-development.html",
+  "path": "drug-discovery/get-involved/researcher-development",
+  "timestamp": "2026-10-23T05:21:11.003Z",
+  "title": "Researcher development - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "accordion-plus",
+    "carousel-gallery",
+    "cards-icon-tile",
+    "columns-title-left",
+    "columns-contact"
+  ]
+}

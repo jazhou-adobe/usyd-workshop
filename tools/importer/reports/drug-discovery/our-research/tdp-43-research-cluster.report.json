@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/our-research/tdp-43-research-cluster.html",
+  "path": "drug-discovery/our-research/tdp-43-research-cluster",
+  "timestamp": "2026-10-23T05:20:50.981Z",
+  "title": "TDP-43 Research Cluster - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "accordion-plus",
+    "columns-title-left",
+    "columns-title-left",
+    "columns-title-left"
+  ]
+}

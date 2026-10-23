@@ -10,6 +10,7 @@
   --brand-orange: #e64626;
   --brand-ochre-dark: #c63a1e;
   --brand-grey-90: #f7f7f7;
+  --brand-sand: #fcede2;
 
   /* fonts */
   --body-font-family: apercu, apercu-fallback, helvetica, arial, sans-serif;
@@ -38,7 +39,7 @@
   --content-gutter: 16px;
 
   /* nav height */
-  --nav-height: 56px;
+  --nav-height: 64px;
 }
 
 @media (width >= 900px) {
@@ -52,5 +53,8 @@
 
     /* spacing */
     --section-padding: 64px;
+
+    /* header: brand row (76px) + divider + section row (56px) */
+    --nav-height: 133px;
   }
 }

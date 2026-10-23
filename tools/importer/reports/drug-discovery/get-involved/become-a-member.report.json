@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/get-involved/become-a-member.html",
+  "path": "drug-discovery/get-involved/become-a-member",
+  "timestamp": "2026-10-23T05:13:16.846Z",
+  "title": "Become a member - The University of Sydney",
+  "template": "text-page",
+  "blocks": [
+    "toc-on-this-page",
+    "embed-formstack"
+  ]
+}

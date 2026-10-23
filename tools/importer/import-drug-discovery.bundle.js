@@ -134,49 +134,79 @@ var CustomImportScript = (() => {
   function absUrl2(url) {
     if (!url) return url;
     const u = url.trim();
-    if (/^https?:\/\//i.test(u) || u.startsWith("data:")) return u;
+    if (/^https?:\/\//i.test(u) || u.startsWith("data:") || u.startsWith("mailto:") || u.startsWith("tel:")) return u;
     if (u.startsWith("//")) return `https:${u}`;
     if (u.startsWith("/")) return `${ORIGIN2}${u}`;
     return u;
   }
   function parse2(element, { document }) {
+    const wrapper = element.closest(".cmp-wrapper-teaser") || element;
+    const wrapperClasses = wrapper.className || "";
     const textCell = [];
-    const content = element.querySelector(".m-content-w-bleed-image__content, .cmp-teaser-content") || element;
-    const srcTitle = content.querySelector(".cmp-teaser-content__title, h1, h2, h3");
-    if (srcTitle) {
+    const content = element.querySelector(".cmp-teaser-content") || element.querySelector(".m-content-w-bleed-image__content") || element;
+    const pretitle = content.querySelector(".cmp-teaser-content__pretitle");
+    if (pretitle && pretitle.textContent.trim()) {
+      const p = document.createElement("p");
+      p.textContent = pretitle.textContent.trim();
+      textCell.push(p);
+    }
+    const srcTitle = content.querySelector(".cmp-teaser-content__title") || content.querySelector("h1, h2, h3");
+    if (srcTitle && srcTitle.textContent.trim()) {
       const h2 = document.createElement("h2");
       h2.textContent = srcTitle.textContent.trim();
       textCell.push(h2);
     }
     const desc = content.querySelector(".cmp-teaser-content__description");
     if (desc) {
-      [...desc.children].forEach((child) => {
-        if (!child.textContent.trim()) return;
-        const clone = child.cloneNode(true);
-        clone.querySelectorAll("a[href]").forEach((a) => a.setAttribute("href", absUrl2(a.getAttribute("href"))));
-        textCell.push(clone);
-      });
+      const blocks = [...desc.children].filter((c) => /^(P|UL|OL|H[1-6]|BLOCKQUOTE)$/.test(c.tagName));
+      if (blocks.length) {
+        blocks.forEach((child) => {
+          if (!child.textContent.trim()) return;
+          const clone = child.cloneNode(true);
+          clone.querySelectorAll("a[href]").forEach((a) => a.setAttribute("href", absUrl2(a.getAttribute("href"))));
+          textCell.push(clone);
+        });
+      } else if (desc.textContent.trim()) {
+        const p = document.createElement("p");
+        [...desc.childNodes].forEach((n) => {
+          if (n.nodeType === 3 || n.nodeType === 1) p.append(n.cloneNode(true));
+        });
+        p.querySelectorAll("a[href]").forEach((a) => a.setAttribute("href", absUrl2(a.getAttribute("href"))));
+        if (p.firstChild && p.firstChild.nodeType === 3) p.firstChild.textContent = p.firstChild.textContent.replace(/^\s+/, "");
+        if (p.lastChild && p.lastChild.nodeType === 3) p.lastChild.textContent = p.lastChild.textContent.replace(/\s+$/, "");
+        textCell.push(p);
+      }
     }
-    [...content.querySelectorAll("ul.m-list a[href]")].forEach((a) => {
-      const text = (a.querySelector(".m-list__title") || a).textContent.trim();
-      if (!text) return;
+    const seen = /* @__PURE__ */ new Set();
+    const addLink = (href, text) => {
+      if (!href || !text || seen.has(href + text)) return;
+      seen.add(href + text);
       const p = document.createElement("p");
       const link = document.createElement("a");
-      link.href = absUrl2(a.getAttribute("href"));
+      link.href = absUrl2(href);
       link.textContent = text;
       p.append(link);
       textCell.push(p);
+    };
+    content.querySelectorAll("ul.m-list a[href]").forEach((a) => {
+      addLink(a.getAttribute("href"), (a.querySelector(".m-list__title") || a).textContent.trim());
+    });
+    content.querySelectorAll(".cmp-teaser-content__cta-holder a[href]").forEach((a) => {
+      addLink(a.getAttribute("href"), (a.querySelector(".cmp-button__text") || a).textContent.trim());
     });
     const imageCell = [];
-    const srcImg = element.querySelector('.m-content-w-bleed-image__image img:not([src^="data:"]), .m-content-w-bleed-image__image-container img:not([src^="data:"])');
+    const srcImg = element.querySelector('.m-content-w-bleed-image__image img:not([src^="data:"]), .m-content-w-image-std__image img:not([src^="data:"])') || [...element.querySelectorAll('img:not([src^="data:"])')].find((img) => !img.closest(".cmp-teaser-content"));
     if (srcImg) {
       const img = document.createElement("img");
       img.src = absUrl2(srcImg.getAttribute("src"));
       img.alt = srcImg.getAttribute("alt") || "";
       imageCell.push(img);
     }
-    const cells = [[textCell, imageCell.length ? imageCell : ""]];
-    const block = WebImporter.Blocks.createBlock(document, { name: "columns-bleed-image", cells });
+    const imageLeft = /\bm-content-w-image--image-left\b/.test(wrapperClasses);
+    const imgCol = imageCell.length ? imageCell : "";
+    const cells = [imageLeft ? [imgCol, textCell] : [textCell, imgCol]];
+    const name = /\bm-content-w-image--sandstone\b/.test(wrapperClasses) ? "columns-bleed-image (sandstone)" : "columns-bleed-image";
+    const block = WebImporter.Blocks.createBlock(document, { name, cells });
     element.replaceWith(block);
   }
 
@@ -432,7 +462,9 @@ var CustomImportScript = (() => {
         ".m-local-desktop-nav__skip-to-content-link",
         "header.m-local-desktop-nav__header"
       ]);
-      removeAll(element, ["#skip-to-content"]);
+      element.querySelectorAll("#skip-to-content").forEach((el) => {
+        if (!el.textContent.trim() && !el.querySelector("img, iframe, form")) el.remove();
+      });
       removeAll(element, [".cmp-wrapper-breadcrumb"]);
       removeAll(element, [
         ".exf-common-page",
@@ -453,11 +485,9 @@ var CustomImportScript = (() => {
       element.querySelectorAll(".m-hidden").forEach((el) => {
         if (!el.closest(".m-wrapper-news-article-list")) el.remove();
       });
-      removeAll(element, [
-        ".cmp-carousel__actions",
-        ".cmp-carousel__indicators",
-        ".swiper-notification"
-      ]);
+      element.querySelectorAll(".cmp-carousel__actions, .cmp-carousel__indicators, .swiper-notification").forEach((el) => {
+        if (!el.closest(".cmp-wrapper-carousel")) el.remove();
+      });
     }
     if (hookName === "afterTransform") {
       removeAll(element, [".m-hidden"]);

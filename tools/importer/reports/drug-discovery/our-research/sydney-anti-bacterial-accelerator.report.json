@@ -1,0 +1,14 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/our-research/sydney-anti-bacterial-accelerator.html",
+  "path": "drug-discovery/our-research/sydney-anti-bacterial-accelerator",
+  "timestamp": "2026-10-23T05:20:44.297Z",
+  "title": "Sydney Anti-bacterial Accelerator - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-orange-split",
+    "accordion-plus",
+    "columns-title-left",
+    "columns-title-left"
+  ]
+}

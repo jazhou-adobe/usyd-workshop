@@ -1,0 +1,31 @@
+{
+  "variantName": "embed-formstack",
+  "baseBlock": "embed",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/get-involved/become-a-member.html",
+  "visualCharacteristics": {
+    "stylingNotes": [
+      "Live Formstack form (fsForm3543756) shown full width of its column, beside the 'Membership form' heading in a split section."
+    ],
+    "variantRationale": [
+      "Customer decision: embed the live Formstack form rather than rebuild it; the block holds only the canonical public form URL."
+    ],
+    "purpose": "Embed a live Formstack form from its public URL"
+  },
+  "contentPattern": {
+    "summary": "One row with the Formstack public form link; the block lazy-loads the form in a sandboxed iframe",
+    "structure": "row 1 = link to https://<account>.formstack.com/forms/<slug> (link text, if not the URL, becomes the accessible name)"
+  },
+  "blockContent": {
+    "rows": [["Link: https://facultyofscienceuniversityofsydney.formstack.com/forms/drug_discovery_initiative_membership"]],
+    "notes": "Heading-beside-form layout uses section style 'split', not columns."
+  },
+  "options": [],
+  "memberVariantIds": ["embed-formstack"],
+  "usage": {
+    "pagesUsing": ["/drug-discovery/get-involved/become-a-member"],
+    "reuseCount": 1
+  },
+  "reuseGuidance": "Use for any Formstack form. Author only the public form link (not the js.php URL). Give the link descriptive text such as 'Membership form' to name the form region for screen readers.",
+  "usageDescription": "Membership and enquiry forms hosted on Formstack."
+}

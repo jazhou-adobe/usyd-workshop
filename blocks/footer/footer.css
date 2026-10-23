@@ -1,20 +1,320 @@
-footer {
-  background-color: var(--light-color);
-  font-size: var(--body-font-size-xs);
-}
-
-footer .footer > div {
-  margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+/* footer: values from sydney.edu.au footer.m-global-footer-wrapper */
+footer .footer {
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+footer .footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer .footer-inner {
+  box-sizing: border-box;
+  max-width: var(--content-max-width);
+  margin: 0 auto;
+  padding: 0 var(--content-gutter);
+}
+
+/* acknowledgement band */
+footer .footer-band {
+  padding: 48px 0;
+  background-color: var(--brand-orange);
+  color: var(--text-color);
+}
+
+footer .footer-band .footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+  text-align: center;
+}
+
+footer .footer-band-text > p:first-child {
+  font-family: var(--heading-font-family);
+  font-size: 18px;
+  line-height: 28px;
+}
+
+footer .footer-band-text > p:not(:first-child) {
+  margin-top: 24px;
+}
+
+footer .footer-band-cta a:any-link {
+  position: relative;
+  display: inline-flex;
+  padding: 10px 4px;
+  color: var(--text-color);
+  font-weight: 300;
+  line-height: 28px;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+footer .footer-band-cta a::after {
+  content: '';
+  position: absolute;
+  right: 4px;
+  bottom: 1px;
+  left: 4px;
+  height: 1px;
+  background-color: var(--text-color);
+}
+
+footer .footer-band-cta a:hover,
+footer .footer-band-cta a:focus-visible {
+  background-color: rgb(255 255 255 / 20%);
+}
+
+footer .footer-band-media {
+  padding-bottom: 20px;
+}
+
+footer .footer-band-media a:any-link {
+  display: block;
+  line-height: 0;
+}
+
+footer .footer-band-media img {
+  width: 210px;
+  height: auto;
+  aspect-ratio: 233 / 80;
+}
+
+/* dark band: link columns, icon row, legal row */
+footer .footer-main {
+  padding: 36px 0;
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+footer .footer-main a:any-link {
+  color: var(--background-color);
+  text-decoration: none;
+}
+
+/* text links underline on hover; icon and logo links do not */
+footer .footer-column a:hover,
+footer .footer-column a:focus-visible,
+footer .footer-legal a:hover,
+footer .footer-legal a:focus-visible {
+  text-decoration: underline;
+}
+
+footer .footer-links .footer-inner {
+  display: grid;
+  gap: 32px;
+}
+
+footer .footer-column h2 {
+  margin: 0 0 16px;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  letter-spacing: normal;
+  color: var(--background-color);
+}
+
+footer .footer-column ul {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 14px;
+}
+
+footer .footer-column a:any-link,
+footer .footer-legal a:any-link {
+  display: block;
+}
+
+footer .footer-icons {
+  margin-top: 36px;
+}
+
+footer .footer-icons .footer-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+footer .footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+footer .footer-social li {
+  position: relative;
+}
+
+footer .footer-social a:any-link,
+footer .footer-popover-toggle {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  line-height: 0;
+  cursor: pointer;
+}
+
+footer .footer-social img {
+  width: 24px;
+  height: 24px;
+}
+
+footer .footer-popover {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  z-index: 2;
+  padding: 0;
+  background-color: var(--background-color);
+  line-height: 0;
+}
+
+footer .footer-popover[hidden] {
+  display: none;
+}
+
+footer .footer-popover img {
+  width: 90px;
+  height: 90px;
+}
+
+footer .footer-partners {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+footer .footer-partners a:any-link {
+  display: block;
+  line-height: 0;
+}
+
+footer .footer-partners img {
+  width: auto;
+  height: 36px;
+}
+
+footer .footer-bottom {
+  margin-top: 40px;
+}
+
+footer .footer-bottom .footer-inner {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* rule spans the content column, not the gutters */
+footer .footer-bottom .footer-inner::before {
+  content: '';
+  flex: 0 0 100%;
+  margin-bottom: 0;
+  border-top: 1px solid #717171;
+}
+
+footer .footer-legal {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+footer .footer-fineprint {
+  font-family: apercu-mono, 'Courier New', monospace;
+  font-size: 10px;
+  line-height: 14px;
+  letter-spacing: 0.006px;
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer-band .footer-inner {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 114px;
+    text-align: start;
+  }
+
+  footer .footer-band-text > p:first-child {
+    font-size: 20px;
+  }
+
+  footer .footer-band-media img {
+    width: 233px;
+  }
+
+  footer .footer-main {
+    padding: 48px 0;
+  }
+
+  footer .footer-column h2 {
+    margin-bottom: 32px;
+  }
+
+  footer .footer-column ul {
+    gap: 8px;
+    font-size: 16px;
+  }
+
+  footer .footer-icons {
+    margin-top: 48px;
+  }
+
+  footer .footer-icons .footer-inner {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+
+  footer .footer-partners {
+    gap: 40px;
+  }
+
+  footer .footer-partners img {
+    height: 40px;
+  }
+
+  footer .footer-bottom {
+    margin-top: 24px;
+  }
+
+  footer .footer-bottom .footer-inner {
+    flex-flow: row wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  footer .footer-legal {
+    flex-flow: row wrap;
+    gap: 8px 42px;
+  }
+
+  footer .footer-band-text {
+    flex: 0 1 707px;
+  }
+
+  footer .footer-band-media {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: 0;
+    border-left: 1px solid rgb(20 20 20 / 50%);
+  }
+
+  footer .footer-links .footer-inner {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0 132px;
   }
 }

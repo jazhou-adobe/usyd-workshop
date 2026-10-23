@@ -1,0 +1,11 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/get-involved/become-a-member/thank-you.html",
+  "path": "drug-discovery/get-involved/become-a-member/thank-you",
+  "timestamp": "2026-10-23T05:13:23.365Z",
+  "title": "Thank you - The University of Sydney",
+  "template": "text-page",
+  "blocks": [
+    "toc-on-this-page"
+  ]
+}

@@ -6,11 +6,13 @@ Custom **columns** block. Purpose: Lilac text panel beside full-bleed overlappin
 
 Model: `standalone`
 
-Single block table. Content: one row with two cells: [H2, paragraphs, standalone links (one per paragraph) | image]; put the image cell first for image-left.
+Single block table. Content: one row with two cells: [optional date eyebrow paragraph, H2, paragraphs, standalone links (one per paragraph) | image]. Image cell second = text panel beside a bleeding, overlapping image; image cell first = event/news teaser with the image inset inside the band. One link renders as an underlined text link, two or more as a ruled arrow-link list.
 
 ## Supported variations
 
-No variations.
+| Variation | Option class |
+| --- | --- |
+| Sandstone | `sandstone` |
 
 ## Universal Editor fields
 

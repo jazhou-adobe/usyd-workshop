@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-news-list",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/news-and-events/news.html",
+  "visualCharacteristics": {
+    "stylingNotes": "Under H2 \"All news\": vertical list of articles in the main column, landscape thumbnail left, linked H3 title and short summary right; numbered square pagination buttons below (active page filled orange, others white with grey border, orange chevron next arrow).",
+    "variantRationale": "Vertical paginated article list (image left, title + summary right); carousel-news is a horizontal carousel, cards-portrait a 3-up grid",
+    "purpose": "Paginated vertical news article list"
+  },
+  "contentPattern": {
+    "summary": "Repeating structured items (image + title + summary + link) with client-side pagination",
+    "structure": "one row per article: [image | H3 title (linked), summary]"
+  },
+  "blockContent": {
+    "description": "Vertical list of 12 news articles, paginated 10 per page",
+    "rows": [
+      [
+        "Image",
+        "H3 title linked to article URL, summary paragraph"
+      ]
+    ],
+    "notes": "One row per article"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "cards-news-list"
+  ],
+  "usage": "Long list of news articles authored as one row per article (image, linked H3 title, summary). Shows 10 items per page with numbered page buttons and previous/next arrows when there are more than 10 rows.",
+  "reuseGuidance": "Use for news or event archives. Each row is one article; link the title so the whole item becomes a link. Use carousel-news for a short featured strip of recent articles."
+}

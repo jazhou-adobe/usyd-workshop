@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-profile",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/about-us.html",
+  "visualCharacteristics": {
+    "stylingNotes": "Profile row in the right column of a 30/60 split: small round portrait left, linked name and position, orange chevron; whole row linked.",
+    "variantRationale": "Single-row profile: small round portrait left, linked name and position, chevron; cards-portrait is a 3-up grid of tall portrait navigation cards (under 50% similar)",
+    "purpose": "Person profile row with round portrait, linked name and position"
+  },
+  "contentPattern": {
+    "summary": "Image-beside-text profile row (repeatable profile item, whole row linked)",
+    "structure": "one row per profile: [portrait image | name (linked), position]"
+  },
+  "blockContent": {
+    "description": "Director profile: round portrait, linked name, position",
+    "rows": [
+      [
+        "Image",
+        "Name (linked), position"
+      ]
+    ],
+    "notes": "One row per profile"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "cards-profile"
+  ],
+  "usage": "List of one or more people with a round portrait, their name linked to a profile page and their position underneath; the whole row is clickable.",
+  "reuseGuidance": "Use for staff/director profile rows. Link the name so the whole row becomes a link. Use cards-speaker for long bios with larger photos."
+}

@@ -1,0 +1,166 @@
+/* hero-image-overlay: sydney.edu.au .m-hero--style-1
+   Mobile: photo stacked above an orange panel with dark text and a dark CTA.
+   Desktop: full-bleed photo with a dark gradient scrim, white text overlaid
+   on the left and an orange CTA. Values from source computed styles. */
+
+main > .section > .hero-image-overlay-wrapper {
+  max-width: 100%;
+  padding: 0;
+}
+
+.hero-image-overlay {
+  position: relative;
+  box-sizing: border-box;
+  border-bottom: 5px solid var(--brand-orange);
+  background-color: var(--brand-orange);
+  color: var(--text-color);
+}
+
+.hero-image-overlay .hero-image-overlay-image {
+  position: relative;
+  height: 315px;
+  line-height: 0;
+}
+
+.hero-image-overlay .hero-image-overlay-image picture {
+  display: block;
+  height: 100%;
+}
+
+.hero-image-overlay .hero-image-overlay-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+.hero-image-overlay .hero-image-overlay-content {
+  position: relative;
+  box-sizing: border-box;
+  padding: 31px 16px;
+}
+
+.hero-image-overlay .hero-image-overlay-title {
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-style: italic;
+  font-weight: 400;
+  line-height: var(--heading-line-height-xxl);
+  letter-spacing: 0.01em;
+}
+
+.hero-image-overlay .hero-image-overlay-content > p {
+  margin: 27px 0 0;
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 22px;
+  line-height: 30px;
+}
+
+.hero-image-overlay .hero-image-overlay-content > p.button-container {
+  margin-top: 41px;
+}
+
+/* CTA: dark filled button on the orange mobile panel */
+main .hero-image-overlay a.button:any-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  max-width: 100%;
+  margin: 0;
+  border: 2px solid var(--text-color);
+  border-radius: 4px;
+  padding: 10px 24px;
+  background-color: var(--text-color);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  text-decoration: none;
+  white-space: normal;
+  transition: background-color 0.3s, border-color 0.3s, color 0.3s;
+}
+
+main .hero-image-overlay a.button:any-link:hover,
+main .hero-image-overlay a.button:any-link:focus-visible {
+  border-color: #fff;
+  background-color: #fff;
+  color: var(--text-color);
+}
+
+@media (width >= 900px) {
+  .hero-image-overlay {
+    min-height: 550px;
+    background-color: var(--text-color);
+    color: #fff;
+  }
+
+  .hero-image-overlay .hero-image-overlay-image {
+    position: absolute;
+    inset: 0;
+    height: auto;
+  }
+
+  /* dark scrim behind the left-aligned text */
+  .hero-image-overlay .hero-image-overlay-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(50deg, rgb(0 0 0 / 38%) 53.63%, rgb(0 0 0 / 0%) 76.4%);
+  }
+
+  .hero-image-overlay .hero-image-overlay-content {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    max-width: var(--content-max-width);
+    margin: 0 auto;
+    padding: 232px 16px 62px;
+  }
+
+  .hero-image-overlay .hero-image-overlay-content > * {
+    max-width: 628px;
+  }
+
+  .hero-image-overlay .hero-image-overlay-title {
+    color: #fff;
+  }
+
+  /* short orange rule under the title */
+  .hero-image-overlay .hero-image-overlay-title::after {
+    content: '';
+    display: block;
+    width: 68px;
+    height: 5px;
+    margin-top: 32px;
+    background-color: var(--brand-orange);
+  }
+
+  .hero-image-overlay .hero-image-overlay-content > p,
+  .hero-image-overlay .hero-image-overlay-content > p.button-container {
+    margin: 0;
+  }
+
+  .hero-image-overlay .hero-image-overlay-content > p {
+    color: #fff;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  /* CTA: orange filled button over the photo */
+  main .hero-image-overlay a.button:any-link {
+    border-color: var(--link-color);
+    background-color: var(--link-color);
+  }
+
+  main .hero-image-overlay a.button:any-link:hover,
+  main .hero-image-overlay a.button:any-link:focus-visible {
+    border-color: #af2b11;
+    background-color: #af2b11;
+    color: #fff;
+  }
+}

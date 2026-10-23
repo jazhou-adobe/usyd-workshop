@@ -1,0 +1,16 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/news-and-events/drug-discovery-symposium.html",
+  "path": "drug-discovery/news-and-events/drug-discovery-symposium",
+  "timestamp": "2026-10-23T05:20:00.756Z",
+  "title": "Drug Discovery Symposium 2025 - The University of Sydney",
+  "template": "section-page",
+  "blocks": [
+    "hero-image-overlay",
+    "cards-cta",
+    "table-key-value",
+    "cards-speaker",
+    "cards-speaker",
+    "cards-speaker"
+  ]
+}

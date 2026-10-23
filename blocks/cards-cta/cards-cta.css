@@ -1,0 +1,113 @@
+/* cards-cta: call-to-action link box (grey default, `ochre` option) */
+.cards-cta {
+  --cards-cta-bg: var(--brand-grey-90);
+  --cards-cta-bg-hover: #d2d2d2;
+  --cards-cta-fg: var(--text-color);
+  --cards-cta-icon: var(--brand-orange);
+}
+
+.cards-cta.ochre {
+  --cards-cta-bg: var(--brand-ochre-dark);
+  --cards-cta-bg-hover: #af2b11;
+  --cards-cta-fg: #fff;
+  --cards-cta-icon: #fff;
+}
+
+.cards-cta > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.cards-cta .cards-cta-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 0 32px;
+  padding: 24px;
+  background-color: var(--cards-cta-bg);
+  color: var(--cards-cta-fg);
+  transition: background-color 0.25s ease-in-out;
+}
+
+.cards-cta .cards-cta-card-body {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  min-width: 0;
+}
+
+.cards-cta .cards-cta-card-body > * {
+  margin: 0;
+}
+
+.cards-cta .cards-cta-card-body > .cards-cta-card-title {
+  margin-bottom: 8px;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 300;
+  line-height: var(--heading-line-height-l);
+  color: var(--cards-cta-fg);
+}
+
+.cards-cta .cards-cta-card-title a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-cta .cards-cta-card-body > .cards-cta-card-description {
+  margin-bottom: 16px;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  color: var(--cards-cta-fg);
+}
+
+/* arrow icon (external-link icon for external targets); the source renders
+   the 24px svg inline, so its line box leaves 7px below the icon */
+.cards-cta .cards-cta-card-icon {
+  display: block;
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+  margin-bottom: 7px;
+  background-color: var(--cards-cta-icon);
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M0.75 12L23.25 12'/%3E%3Cpath d='M16.25 5L23.25 12L16.25 19'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+
+.cards-cta .is-external .cards-cta-card-icon {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9.25 14.523L23.25 0.75'/%3E%3Cpath d='M23.25 8.621V0.75H15.25'/%3E%3Cpath d='M12.125 5.75H1.625a.875.875 0 0 0-.875.875v15.75a.875.875 0 0 0 .875.875h15.75a.875.875 0 0 0 .875-.875v-10.5'/%3E%3C/svg%3E");
+}
+
+/* stretch the title link over the whole box */
+.cards-cta .is-linked .cards-cta-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cards-cta .is-linked .cards-cta-card-link:focus-visible {
+  outline: none;
+}
+
+.cards-cta .is-linked:focus-within {
+  outline: 2px solid var(--text-color);
+  outline-offset: 2px;
+}
+
+.cards-cta .is-linked:is(:hover, :focus-within) {
+  background-color: var(--cards-cta-bg-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards-cta .cards-cta-card {
+    transition: none;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-cta .cards-cta-card {
+    margin-bottom: 48px;
+  }
+}

@@ -1,0 +1,94 @@
+{
+  "variantName": "columns-title-left",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/our-research/neurological-and-cns-disorders.html",
+  "visualCharacteristics": {
+    "stylingNotes": [
+      "White, 30/60 layout. Left: serif H2 \"Priority Driven Program\" above a stat tile (light grey #f4f4f4 box, large orange \"60-70%\" value, caption \"of Dementia patients are diagnosed with Alzheimer's disease\", orange bottom border; whole tile links to the WHO dementia fact sheet). Right: H3 \"Alzheimer's and Dementia Program\", three paragraphs (inline links Eleanor Drummond, Michael Kassiou), thin rule, then a one-item accordion \"Research team\" with orange plus icon.",
+      "White, 48px padding, 30/60 layout: serif H2 left (narrow column); two paragraphs with inline links and a photo (two chemistry students in a lab) in the wide right column.",
+      "White, top/bottom padding, 30/60 layout. Left: serif H2 \"Developing researcher potential\". Right: two paragraphs, then a four-item accordion separated by thin rules with orange plus icons (Drug Discovery Forum; ECR and HDR Initiatives; I Have a PhD, now what?; EMCR Seed Funding Scheme).",
+      "White, top/bottom padding, 30/60 layout: orange line icon above a sans-serif H2 in the narrow left column; paragraphs right. A thin grey rule (separator component without content) follows each step except the last.",
+      "White, top/bottom padding, 30/60 layout: orange line icon above a sans-serif H2 in the narrow left column; paragraphs right. A thin grey rule (separator component without content) follows each step except the last.",
+      "White, top/bottom padding, 30/60 layout: orange line icon above a sans-serif H2 in the narrow left column; paragraphs right. A thin grey rule (separator component without content) follows each step except the last.",
+      "White, top/bottom padding, 30/60 layout: orange line icon above a sans-serif H2 in the narrow left column; paragraphs right. A thin grey rule (separator component without content) follows each step except the last.",
+      "White, top/bottom padding, 30/60 layout: orange line icon above a sans-serif H2 in the narrow left column; paragraphs right. A thin grey rule (separator component without content) follows each step except the last."
+    ],
+    "variantRationale": [
+      "Narrow serif H2 column beside paragraphs (30/60); this page adds a stat tile under the H2 in the left cell - same variant, tile styled within it",
+      "Narrow 30% column with serif H2 beside a 60% column of paragraphs and a photo, white background. columns-bleed-image (lilac panel, overlapping full-bleed image) and columns-contact (grey 3-col band) are not similar",
+      "Narrow serif H2 column (30) beside paragraphs (60) - matches planned columns-title-left (same pattern used on neurological with an accordion following)",
+      "Planned on partnerships: narrow 30% column with H2 beside a 60% column of paragraphs on white (>=80%). Differences: an orange line icon above the H2, sans-serif step title and a thin grey rule between steps. columns-bleed-image (coloured panel + bleed image) is not similar.",
+      "Planned on partnerships: narrow 30% column with H2 beside a 60% column of paragraphs on white (>=80%). Differences: an orange line icon above the H2, sans-serif step title and a thin grey rule between steps. columns-bleed-image (coloured panel + bleed image) is not similar.",
+      "Planned on partnerships: narrow 30% column with H2 beside a 60% column of paragraphs on white (>=80%). Differences: an orange line icon above the H2, sans-serif step title and a thin grey rule between steps. columns-bleed-image (coloured panel + bleed image) is not similar.",
+      "Planned on partnerships: narrow 30% column with H2 beside a 60% column of paragraphs on white (>=80%). Differences: an orange line icon above the H2, sans-serif step title and a thin grey rule between steps. columns-bleed-image (coloured panel + bleed image) is not similar.",
+      "Planned on partnerships: narrow 30% column with H2 beside a 60% column of paragraphs on white (>=80%). Differences: an orange line icon above the H2, sans-serif step title and a thin grey rule between steps. columns-bleed-image (coloured panel + bleed image) is not similar."
+    ],
+    "purpose": "Narrow title column (optional icon above, optional stat tile below) beside wide body copy"
+  },
+  "contentPattern": {
+    "summary": "Side-by-side layout: narrow title column (with stat tile) beside body copy; cannot be expressed as default content",
+    "structure": "each row = [optional icon image, heading (H2), optional stat tile: strong value paragraph + caption paragraph (link either to link the whole tile) | body paragraphs, images, buttons]"
+  },
+  "blockContent": {
+    "rows": [
+      [
+        "Column 1 content",
+        "Column 2 content",
+        "(Column 3 content)"
+      ]
+    ],
+    "notes": "section-3: 2 cells [H2 + stat tile as paragraphs: linked strong \"60-70%\" value, caption paragraph | H3 + three paragraphs]; stat value stays out of headings. section-6: 3 cells [H2 | icon link list | Email/Media enquiries H3 + mailto links]",
+    "occurrences": [
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/neurological-and-cns-disorders.html",
+        "description": "Two columns: [H2 \"Priority Driven Program\" + stat tile: value \"60-70%\" (strong paragraph, NOT a heading) and caption \"of Dementia patients are diagnosed with Alzheimer's disease\", linked to https://www.who.int/news-room/fact-sheets/detail/dementia] | [H3 \"Alzheimer's and Dementia Program\" + three paragraphs with inline profile links]"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/partnerships.html",
+        "description": "H2 \"Community Outreach and Engagement\" | two paragraphs (Breaking Good, Alice Motion links) + photo"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/get-involved/researcher-development.html",
+        "description": "Two columns: [H2 \"Developing researcher potential\"] | [two paragraphs: professional development and industry advice; annual and ongoing events]"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/what-is-drug-discovery-.html",
+        "description": "Icon (microscope.svg), H2 \"1. Fundamental research\" | one paragraph (diseases studied across immunology, biology, biochemistry)"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/what-is-drug-discovery-.html",
+        "description": "Icon (laboratory-cell.svg), H2 \"2. Target Identification\" | one paragraph (pinpoint the biological process)"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/what-is-drug-discovery-.html",
+        "description": "Icon (testtubes-multiple-lab.svg), H2 \"3. Hit Generation\" | three paragraphs (screening hits; screening platforms; cell-based assays and most potent lead)"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/what-is-drug-discovery-.html",
+        "description": "Icon (molecule-structure.svg), H2 \"4. Lead Optimisation\" | one paragraph (lead compounds optimised)"
+      },
+      {
+        "page": "https://www.sydney.edu.au/drug-discovery/our-research/what-is-drug-discovery-.html",
+        "description": "Icon (testtube-tick-check.svg), H2 \"5. Clinical and pre-clinical trials\" | one paragraph (preclinical and clinical studies) and button \"Our partnerships\" linking to /drug-discovery/partnerships"
+      }
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-title-left"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/our-research/neurological-and-cns-disorders",
+      "/drug-discovery/partnerships",
+      "/drug-discovery/get-involved/researcher-development",
+      "/drug-discovery/our-research/what-is-drug-discovery-",
+      "/drug-discovery/about-us/our-facilities"
+    ],
+    "reuseCount": 5,
+    "lastUsed": "2026-10-23T04:12:27.976Z"
+  },
+  "reuseGuidance": "Use when a heading sits beside its body copy. Consecutive instances (or rows) are separated by a thin grey rule, so author one instance per step. Keep stat values as strong paragraphs, not headings.",
+  "usageDescription": "Two-column 30/60 text layout with the section heading on the left; also numbered process steps with an orange line icon, and a key statistic tile under the heading."
+}

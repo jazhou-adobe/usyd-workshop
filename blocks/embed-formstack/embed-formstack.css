@@ -1,0 +1,83 @@
+/*
+ * Frame heights are measured from the Formstack public form, which scrolls
+ * inside its own full-viewport container, so the frame must be at least as
+ * tall as the form to avoid an inner scrollbar:
+ * - first screen (name, email, staff/student question): 950px at 358px wide,
+ *   966px at 691px wide
+ * - fully expanded ("Yes" branch, 48 visible fields): 3720px at 288px wide,
+ *   3142px at 691px wide
+ * The frame starts at the first-screen height and grows to the full height
+ * once the reader engages with the form (see embed-formstack.js).
+ */
+.embed-formstack {
+  --embed-formstack-height: 1000px;
+  --embed-formstack-height-full: 3760px;
+
+  position: relative;
+  width: 100%;
+}
+
+.embed-formstack .embed-formstack-frame {
+  display: block;
+  width: 100%;
+  height: var(--embed-formstack-height);
+  border: 0;
+  background: var(--background-color);
+}
+
+.embed-formstack.embed-formstack-expanded .embed-formstack-frame {
+  height: var(--embed-formstack-height-full);
+}
+
+/* loading state: grey placeholder with a status label over the frame */
+.embed-formstack.embed-formstack-loading .embed-formstack-frame {
+  background: var(--light-color);
+}
+
+.embed-formstack.embed-formstack-loading::before {
+  content: "Loading form\2026";
+  position: absolute;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: min(var(--embed-formstack-height), 50vh);
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  color: var(--text-color);
+  pointer-events: none;
+}
+
+/* fallback link, shown alone until the frame is inserted and kept below it */
+.embed-formstack .embed-formstack-fallback {
+  margin: 16px 0 0;
+  font-size: var(--body-font-size-s);
+  line-height: 24px;
+}
+
+.embed-formstack .embed-formstack-fallback:only-child {
+  margin: 0;
+}
+
+.embed-formstack .embed-formstack-fallback a:any-link {
+  color: var(--link-color);
+}
+
+@media (width >= 900px) {
+  .embed-formstack {
+    --embed-formstack-height-full: 3180px;
+  }
+}
+
+/*
+ * Source places the form in the right-hand 2fr column of a 1fr/2fr grid from
+ * 1024px (form column 585px of 992px, 691px of 1168px = 59.13%). When the
+ * section has no split layout of its own, the block takes that column width
+ * and position itself.
+ */
+@media (width >= 1024px) {
+  main .section:not(.split) .embed-formstack {
+    width: 59.13%;
+    margin-left: auto;
+  }
+}

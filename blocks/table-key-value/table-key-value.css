@@ -1,0 +1,60 @@
+/* table-key-value: values from source computed styles (.cmp-text table) */
+.table-key-value {
+  margin: 0 0 16px;
+  color: var(--text-color);
+  overflow-x: auto;
+}
+
+.table-key-value .table-key-value-table {
+  width: 100%;
+  margin: 0;
+  border: 1px solid #d2d2d2;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: transparent;
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+}
+
+.table-key-value .table-key-value-table tr {
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.table-key-value .table-key-value-label,
+.table-key-value .table-key-value-value {
+  padding: 16px 24px;
+  border: 0;
+  color: var(--text-color);
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.table-key-value .table-key-value-label {
+  font-weight: 700;
+}
+
+.table-key-value .table-key-value-value {
+  font-weight: 400;
+}
+
+.table-key-value .table-key-value-value a:any-link {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+.table-key-value .table-key-value-value a:hover {
+  color: var(--link-hover-color);
+}
+
+.table-key-value .table-key-value-label > :first-child,
+.table-key-value .table-key-value-value > :first-child {
+  margin-top: 0;
+}
+
+.table-key-value .table-key-value-label > :last-child,
+.table-key-value .table-key-value-value > :last-child {
+  margin-bottom: 0;
+}

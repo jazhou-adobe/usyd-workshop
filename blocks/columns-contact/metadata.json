@@ -27,6 +27,18 @@
   "memberVariantIds": [
     "columns-contact"
   ],
-  "usage": "Contact band with three columns: section heading, icon links (for example, social or newsletter), and contact headings with mailto links.",
-  "reuseGuidance": "Put it in a section with style light-grey for the grey band. Columns are tagged by content, so the column order can change."
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/about-us",
+      "/drug-discovery/partnerships",
+      "/drug-discovery/our-research/what-is-drug-discovery",
+      "/drug-discovery/our-research/neurological-and-cns-disorders",
+      "/drug-discovery/news-and-events",
+      "/drug-discovery/get-involved/researcher-development"
+    ],
+    "reuseCount": 6,
+    "lastUsed": "2026-10-23T03:18:27.814Z"
+  },
+  "reuseGuidance": "Put it in a section with style light-grey for the grey band. Columns are tagged by content, so the column order can change.",
+  "usageDescription": "Contact band with three columns: section heading, icon links (for example, social or newsletter), and contact headings with mailto links."
 }

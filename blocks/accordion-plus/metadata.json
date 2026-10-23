@@ -1,0 +1,40 @@
+{
+  "variantName": "accordion-plus",
+  "baseBlock": "accordion",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/our-research/neurological-and-cns-disorders.html",
+  "visualCharacteristics": {
+    "stylingNotes": "White, 30/60 layout. Left: serif H2 \"Priority Driven Program\" above a stat tile (light grey #f4f4f4 box, large orange \"60-70%\" value, caption \"of Dementia patients are diagnosed with Alzheimer's disease\", orange bottom border; whole tile links to the WHO dementia fact sheet). Right: H3 \"Alzheimer's and Dementia Program\", three paragraphs (inline links Eleanor Drummond, Michael Kassiou), thin rule, then a one-item accordion \"Research team\" with orange plus icon.",
+    "variantRationale": "Expandable item with orange plus icon over thin rules; matches planned variant from partnerships",
+    "purpose": "Expand/collapse items separated by thin rules with an orange plus/minus icon; titles are buttons with aria-expanded"
+  },
+  "contentPattern": {
+    "summary": "Interactive expand/collapse component",
+    "structure": "one row per item: [title | content (paragraphs, lists, links)]"
+  },
+  "blockContent": {
+    "description": "Accordion with one item \"Research team\": bulleted list of 8 researchers (Eryn Werry, Margaret Sunde, Jonathan Danon, Sian Genoud, Tom Kavanagh, Jonathan Du, Ann Na Cho, Jarryd Daymond; most linked) / Accordion: Endo Axiom, Kinoxis Therapeutics, Pharos Therapeutics, each with two paragraphs and inline links / Accordion, 4 items: Drug Discovery Forum (3 paragraphs, MTPConnect link); ECR and HDR Initiatives (2 paragraphs + bold sub-labels CDDI Awards, ECR Awards, Travel Awards, ECR Symposium each with paragraphs; italic \"Funding for Impact HDR Pitch Session\"); I Have a PhD, now what? (3 paragraphs); EMCR Seed Funding Scheme (1 paragraph)",
+    "rows": [
+      [
+        "Title",
+        "Content"
+      ]
+    ],
+    "notes": "One row: \"Research team\" | bulleted list of 8 researchers with profile links"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "accordion-plus"
+  ],
+  "usage": {
+    "pagesUsing": [
+      "/drug-discovery/our-research/neurological-and-cns-disorders",
+      "/drug-discovery/partnerships",
+      "/drug-discovery/get-involved/researcher-development"
+    ],
+    "reuseCount": 3,
+    "lastUsed": "2026-10-23T03:32:53.103Z"
+  },
+  "reuseGuidance": "Use for collapsible lists of items with longer content. One row per item: title | content. All items start collapsed.",
+  "usageDescription": "Expand/collapse items separated by thin rules with an orange plus/minus icon; titles are buttons with aria-expanded"
+}

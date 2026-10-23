@@ -1,0 +1,84 @@
+/* source: .cmp-wrapper-table-of-contents / .cmp-toc__content */
+.toc-on-this-page {
+  /* intro p (40px) + grid row-gap (16px) above; 72px + row-gap below */
+  margin: 56px 0 88px;
+  color: var(--text-color);
+}
+
+/* last in its section: the section padding provides the spacing */
+.toc-on-this-page-wrapper:last-child > .toc-on-this-page {
+  margin-bottom: 0;
+}
+
+.toc-on-this-page .toc-on-this-page-title {
+  margin: 0 0 24px;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  line-height: var(--heading-line-height-l);
+  font-weight: 300;
+}
+
+.toc-on-this-page .toc-on-this-page-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc-on-this-page .toc-on-this-page-list li {
+  padding-bottom: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.toc-on-this-page .toc-on-this-page-list li:last-child {
+  padding-bottom: 0;
+}
+
+.toc-on-this-page .toc-on-this-page-list a {
+  color: var(--text-color);
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 28px;
+  text-decoration: none;
+}
+
+/* orange south-east arrow; 16px padding + the source's leading space */
+.toc-on-this-page .toc-on-this-page-list a::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M3.54171 3.125L16.8 16.3833' stroke='%23E64626' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.8 9.0918V16.3835H9.50838' stroke='%23E64626' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  position: relative;
+  top: 4px;
+  padding-right: calc(16px + 0.27em);
+}
+
+.toc-on-this-page .toc-on-this-page-list a:hover {
+  color: var(--link-hover-color);
+}
+
+.toc-on-this-page .toc-on-this-page-list a:hover::before {
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'%3E%3Cpath d='M3.54171 3.125L16.8 16.3833' stroke='%23C63A1E' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M16.8 9.0918V16.3835H9.50838' stroke='%23C63A1E' stroke-width='1.25' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+/* li clips overflow, so keep the focus ring inside it */
+.toc-on-this-page .toc-on-this-page-list a:focus-visible {
+  outline-offset: -1px;
+}
+
+@media (width >= 768px) {
+  .toc-on-this-page .toc-on-this-page-list li {
+    padding-bottom: 16px;
+  }
+}
+
+@media (width >= 900px) {
+  /* source column is 8 of 12 grid columns (aem-GridColumn--default--8) */
+  .toc-on-this-page {
+    max-width: calc((100% + 2 * var(--content-gutter)) * 2 / 3 - 2 * var(--content-gutter));
+  }
+
+  .toc-on-this-page .toc-on-this-page-list a {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}

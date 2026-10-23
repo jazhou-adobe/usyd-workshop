@@ -1,0 +1,91 @@
+/* cards-speaker: photo left, name + bio right, thin rules between rows */
+.cards-speaker {
+  color: var(--text-color);
+}
+
+.cards-speaker > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* mobile: stacked photo then text, row-gap 24px (source flex column) */
+.cards-speaker .cards-speaker-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 24px;
+  padding: 32px 0;
+}
+
+/* source separator: 32px padding either side of a 1px rgb(210, 210, 210) rule */
+.cards-speaker .cards-speaker-card + .cards-speaker-card {
+  border-top: 1px solid rgb(210 210 210);
+}
+
+.cards-speaker .cards-speaker-card:first-child {
+  padding-top: 0;
+}
+
+.cards-speaker .cards-speaker-card:last-child {
+  padding-bottom: 0;
+}
+
+/* source .cmp-image wrapper carries 24px bottom padding */
+.cards-speaker .cards-speaker-card-image {
+  padding-bottom: 24px;
+  line-height: 0;
+}
+
+.cards-speaker .cards-speaker-card-image picture {
+  display: block;
+}
+
+.cards-speaker .cards-speaker-card-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+.cards-speaker .cards-speaker-card-body {
+  min-width: 0;
+}
+
+.cards-speaker .cards-speaker-card-body > :first-child {
+  margin-top: 0;
+}
+
+.cards-speaker .cards-speaker-card-body :is(h2, h3, h4) {
+  margin: 0 0 24px;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  line-height: var(--heading-line-height-l);
+  color: var(--text-color);
+}
+
+.cards-speaker .cards-speaker-card-body p {
+  margin: 0 0 24px;
+  font-size: var(--body-font-size-m);
+  line-height: var(--body-line-height);
+  color: var(--text-color);
+}
+
+.cards-speaker .cards-speaker-card-body a:any-link {
+  color: var(--link-color);
+  font-weight: 400;
+  text-decoration: underline;
+}
+
+/* desktop: source 30-60 layout = 33% / 58% columns with a 9% column gap */
+@media (width >= 900px) {
+  .cards-speaker .cards-speaker-card {
+    grid-template-columns: 33% 58%;
+    column-gap: 9%;
+  }
+
+  .cards-speaker .cards-speaker-card.no-image {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

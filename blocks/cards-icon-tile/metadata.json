@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-icon-tile",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/get-involved/researcher-development.html",
+  "visualCharacteristics": {
+    "stylingNotes": "Transparent tile (no box) beside text in a 60/30 split on a light grey band: large orange outline icon (72px) above a bold linked title and an orange chevron; whole tile linked.",
+    "variantRationale": "Single transparent tile: large orange outline icon above a bold linked title and orange chevron, no box. cards-cta is a filled box without an icon (under 80% similar)",
+    "purpose": "Linked icon tile with large icon, bold title and chevron"
+  },
+  "contentPattern": {
+    "summary": "Styled linked icon tile placed beside the default content; the whole tile is a link",
+    "structure": "one row per tile: [icon image | linked title]"
+  },
+  "blockContent": {
+    "description": "Icon tile: globe-information icon, linked title \"SPARK Global\" -> https://sparkglobal.io/",
+    "rows": [
+      [
+        "Icon image",
+        "Linked title"
+      ]
+    ],
+    "notes": "Title is authored as linked (bold) text, not a heading; chevron is decorative CSS"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "cards-icon-tile"
+  ],
+  "usage": "One or more icon tiles, each with a large icon above a bold linked title; the whole tile is clickable and shows a chevron.",
+  "reuseGuidance": "Use for an icon-led link to an external program or resource beside default content. Use cards-cta when the link should be a filled box without an icon."
+}
