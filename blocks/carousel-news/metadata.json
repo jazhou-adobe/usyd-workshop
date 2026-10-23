@@ -1,0 +1,31 @@
+{
+  "variantName": "carousel-news",
+  "baseBlock": "carousel",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/",
+  "visualCharacteristics": {
+    "stylingNotes": "White background; H2 'Related news'; 3-up news cards (image, title, truncated description) with pagination dots and prev/next arrows (13 articles).",
+    "variantRationale": "3-up news card slider with dots and arrows",
+    "purpose": "3-up news card slider with dots and arrows"
+  },
+  "contentPattern": {
+    "summary": "Interactive rotating set of repeating news items",
+    "structure": "one row per article: [image | heading with link, description]"
+  },
+  "blockContent": {
+    "description": "Slider of 13 news articles, each image, linked title, description",
+    "rows": [
+      [
+        "Image",
+        "Title (heading, linked), description"
+      ]
+    ],
+    "notes": "One row per slide/news article (13)"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "carousel-news"
+  ],
+  "usage": "News/article slider showing 3 cards per view on desktop (2 on tablet, 1 on mobile) with page dots and prev/next arrows.",
+  "reuseGuidance": "Use for lists of related news or stories longer than one row. One row per article: image | linked title + description."
+}

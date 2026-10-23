@@ -1,0 +1,15 @@
+{
+  "status": "success",
+  "url": "https://www.sydney.edu.au/drug-discovery/",
+  "path": "drug-discovery/index",
+  "timestamp": "2026-10-23T00:44:04.498Z",
+  "title": "Centre for Drug Discovery and Innovation - The University of Sydney",
+  "template": "drug-discovery",
+  "blocks": [
+    "hero-orange-band",
+    "columns-bleed-image",
+    "cards-portrait",
+    "carousel-news",
+    "columns-contact"
+  ]
+}

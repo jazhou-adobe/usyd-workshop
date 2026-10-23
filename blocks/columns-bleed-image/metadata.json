@@ -1,0 +1,32 @@
+{
+  "variantName": "columns-bleed-image",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/",
+  "visualCharacteristics": {
+    "stylingNotes": "Lilac (jacaranda) panel left with H2, two paragraphs and two arrow links separated by rules; full-bleed lab photo right overlapping panel.",
+    "variantRationale": "Lilac text panel beside full-bleed overlapping image",
+    "purpose": "Lilac text panel beside full-bleed overlapping image"
+  },
+  "contentPattern": {
+    "summary": "Side-by-side text and image layout",
+    "structure": "one row with two cells: [H2, paragraphs, standalone links (one per paragraph) | image]; put the image cell first for image-left"
+  },
+  "blockContent": {
+    "description": "H2 'Our research', two paragraphs, links 'Drug Discovery research' and 'What is drug discovery?' beside a lab image",
+    "rows": [
+      [
+        "Column 1 content",
+        "Column 2 content",
+        "(Column 3 content)"
+      ]
+    ],
+    "notes": "section-3: 2 cells [text+links | image]; section-6: 3 cells [H2 | icon link list | Email/Media enquiries headings + mailto links]"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-bleed-image"
+  ],
+  "usage": "Feature panel: heading, short paragraphs and a ruled list of arrow links beside a large image that bleeds to the viewport edge.",
+  "reuseGuidance": "Use for a highlighted topic that links onward. Put the image cell second for image-right (or first for image-left). Set the panel colour with section metadata or design styling."
+}

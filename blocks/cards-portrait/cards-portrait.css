@@ -1,0 +1,135 @@
+/* cards-portrait: values from source .m-bespoke-layout--3-cols .m-card */
+.cards-portrait > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.cards-portrait .cards-portrait-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+/* image: fixed-height crop, zooms on hover */
+.cards-portrait .cards-portrait-card-image {
+  height: 334px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.cards-portrait .cards-portrait-card-image picture {
+  display: block;
+  height: 100%;
+}
+
+.cards-portrait .cards-portrait-card-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 350ms ease-in-out;
+}
+
+/* body: title + description */
+.cards-portrait .cards-portrait-card-body {
+  display: flex;
+  flex: 1 1 0%;
+  flex-direction: column;
+  row-gap: 12px;
+}
+
+.cards-portrait .cards-portrait-card-body > * {
+  margin: 0;
+}
+
+.cards-portrait .cards-portrait-card-body :is(h2, h3, h4) {
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 300;
+  line-height: 36px;
+  letter-spacing: 0;
+  color: var(--text-color);
+}
+
+/* orange underline bar that grows on hover */
+.cards-portrait .cards-portrait-card-body :is(h2, h3, h4)::after {
+  content: '';
+  position: relative;
+  top: 8px;
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-color);
+  transition: width 150ms;
+}
+
+.cards-portrait .cards-portrait-card-body :is(h2, h3, h4) a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cards-portrait .cards-portrait-card-body p {
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: 28px;
+  color: var(--text-color);
+}
+
+/* stretch the title link over the whole card */
+.cards-portrait .is-linked .cards-portrait-card-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.cards-portrait .is-linked .cards-portrait-card-link:focus-visible {
+  outline: none;
+}
+
+.cards-portrait .is-linked:focus-within {
+  outline: 1px auto var(--text-color);
+  outline-offset: 1px;
+}
+
+/* hover / focus state */
+.cards-portrait .is-linked:is(:hover, :focus-within) {
+  cursor: pointer;
+}
+
+.cards-portrait .is-linked:is(:hover, :focus-within) .cards-portrait-card-body :is(h2, h3, h4) {
+  color: var(--link-color);
+}
+
+.cards-portrait .is-linked:is(:hover, :focus-within) .cards-portrait-card-body :is(h2, h3, h4)::after {
+  width: 47px;
+}
+
+.cards-portrait .is-linked:is(:hover, :focus-within) .cards-portrait-card-image img {
+  transform: scale(1.1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cards-portrait .cards-portrait-card-image img,
+  .cards-portrait .cards-portrait-card-body :is(h2, h3, h4)::after {
+    transition: none;
+  }
+}
+
+@media (width >= 576px) {
+  .cards-portrait .cards-portrait-card-image {
+    height: 484px;
+    margin-bottom: 24px;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-portrait > ul {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

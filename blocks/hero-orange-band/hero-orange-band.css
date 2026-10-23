@@ -1,0 +1,152 @@
+/* hero-orange-band: values from sydney.edu.au .m-hero--style-2 computed styles */
+
+/* full-bleed: the hero sits flush under the header and directly above the next section */
+main > .section.hero-orange-band-container {
+  padding-bottom: 0;
+}
+
+main > .section > .hero-orange-band-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
+.hero-orange-band {
+  display: flex;
+  flex-direction: column;
+  color: var(--text-color);
+}
+
+/* image */
+.hero-orange-band .hero-orange-band-image {
+  line-height: 0;
+}
+
+.hero-orange-band .hero-orange-band-image picture {
+  display: block;
+}
+
+.hero-orange-band .hero-orange-band-image img {
+  display: block;
+  width: 100%;
+  height: 315px;
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/* orange band */
+.hero-orange-band .hero-orange-band-content {
+  box-sizing: border-box;
+  padding: 31px 16px;
+  background-color: var(--brand-orange);
+}
+
+.hero-orange-band .hero-orange-band-title h1 {
+  margin: 0;
+  color: var(--text-color);
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-style: italic;
+  font-weight: 400;
+  line-height: 80px;
+  letter-spacing: 0.6px;
+}
+
+.hero-orange-band .hero-orange-band-body {
+  box-sizing: border-box;
+  margin-top: 27px;
+}
+
+.hero-orange-band .hero-orange-band-body p {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
+.hero-orange-band .hero-orange-band-body p.button-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  margin-top: 41px;
+  font-size: 16px;
+  line-height: 28px;
+}
+
+/* CTA: black button that inverts to white on hover */
+main .hero-orange-band a.button:any-link {
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  margin: 0;
+  border: 2px solid var(--text-color);
+  border-radius: 4px;
+  padding: 10px 24px;
+  background-color: var(--text-color);
+  color: #fff;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 28px;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+main .hero-orange-band a.button:any-link:hover,
+main .hero-orange-band a.button:any-link:focus {
+  border-color: #fff;
+  background-color: #fff;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+@media (width >= 992px) {
+  .hero-orange-band .hero-orange-band-body p {
+    font-size: 24px;
+    line-height: 36px;
+  }
+}
+
+/* source switches to the side-by-side band at 1024px */
+@media (width >= 1024px) {
+  .hero-orange-band .hero-orange-band-image img {
+    height: 440px;
+  }
+
+  /* outer 16px + inner 16px gutter, content capped at 1200px - 2 x 16px */
+  .hero-orange-band .hero-orange-band-content {
+    display: flex;
+    padding: 32px max(32px, calc((100% - 1168px) / 2));
+  }
+
+  .hero-orange-band .hero-orange-band-title {
+    box-sizing: border-box;
+    flex: 0 1 auto;
+    min-width: 580px;
+    max-width: 768px;
+    padding-right: 36px;
+  }
+
+  .hero-orange-band .hero-orange-band-title h1 {
+    letter-spacing: 0.68px;
+  }
+
+  .hero-orange-band .hero-orange-band-body {
+    display: flex;
+    flex: 0 1 auto;
+    flex-direction: column;
+    gap: 32px;
+    margin-top: 0;
+    border-left: 1px solid var(--text-color);
+    padding-left: 32px;
+  }
+
+  .hero-orange-band .hero-orange-band-body p.button-container {
+    margin-top: 0;
+  }
+}
+
+@media (width >= 1600px) {
+  .hero-orange-band .hero-orange-band-image img {
+    height: 520px;
+  }
+}

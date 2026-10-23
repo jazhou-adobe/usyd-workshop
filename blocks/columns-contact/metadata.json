@@ -1,0 +1,32 @@
+{
+  "variantName": "columns-contact",
+  "baseBlock": "columns",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/",
+  "visualCharacteristics": {
+    "stylingNotes": "Light grey (#f4f4f4) band with padding; three columns: H2 'Stay in touch'; icon links (Centre for Drug Discovery Innovation, Subscribe to our newsletter); Email and Media enquiries headings with mailto links.",
+    "variantRationale": "Three-column contact band: heading, icon links, email links",
+    "purpose": "Three-column contact band: heading, icon links, email links"
+  },
+  "contentPattern": {
+    "summary": "Side-by-side three-column layout",
+    "structure": "one row with three cells: [H2 heading | icon + link paragraphs | headings with mailto links]"
+  },
+  "blockContent": {
+    "description": "Three columns: heading, icon link list, contact emails",
+    "rows": [
+      [
+        "Column 1 content",
+        "Column 2 content",
+        "(Column 3 content)"
+      ]
+    ],
+    "notes": "section-3: 2 cells [text+links | image]; section-6: 3 cells [H2 | icon link list | Email/Media enquiries headings + mailto links]"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "columns-contact"
+  ],
+  "usage": "Contact band with three columns: section heading, icon links (for example, social or newsletter), and contact headings with mailto links.",
+  "reuseGuidance": "Put it in a section with style light-grey for the grey band. Columns are tagged by content, so the column order can change."
+}

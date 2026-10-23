@@ -1,0 +1,11 @@
+{
+  "type": "da",
+  "sites": {
+    "usyd-workshop": {
+      "previewOrg": "jazhou-adobe",
+      "previewSite": "usyd-workshop",
+      "contentHostUrl": "https://content.da.live/jazhou-adobe/usyd-workshop/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  }
+}

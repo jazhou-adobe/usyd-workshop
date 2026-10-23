@@ -1,0 +1,215 @@
+.carousel-news {
+  --carousel-news-per-view: 1;
+  --carousel-news-gap: 16px;
+
+  color: var(--text-color);
+}
+
+.carousel-news .carousel-news-slides-container {
+  position: relative;
+}
+
+.carousel-news .carousel-news-slides,
+.carousel-news .carousel-news-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-news .carousel-news-slides {
+  display: flex;
+  gap: var(--carousel-news-gap);
+  overflow: scroll clip;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+.carousel-news .carousel-news-slides::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-news .carousel-news-slide {
+  position: relative;
+  flex: 0 0 calc((100% - (var(--carousel-news-per-view) - 1) * var(--carousel-news-gap)) / var(--carousel-news-per-view));
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 0 0 32px;
+  box-sizing: border-box;
+}
+
+/* fills the empty slots of a partial last page so it can snap into place */
+.carousel-news .carousel-news-spacer {
+  flex: 0 0 calc(var(--carousel-news-empty, 0) * ((100% - (var(--carousel-news-per-view) - 1) * var(--carousel-news-gap)) / var(--carousel-news-per-view) + var(--carousel-news-gap)) - var(--carousel-news-gap));
+}
+
+.carousel-news .carousel-news-spacer[hidden] {
+  display: none;
+}
+
+.carousel-news .carousel-news-slide-image {
+  margin: 0 0 24px;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.carousel-news .carousel-news-slide-image img {
+  display: block;
+  width: 100%;
+  height: 287px;
+  object-fit: cover;
+  transition: transform 0.35s ease-in-out;
+}
+
+.carousel-news .carousel-news-slide-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.carousel-news .carousel-news-slide-content :is(h2, h3, h4, h5, h6) {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 300;
+  line-height: var(--heading-line-height-l);
+  color: var(--text-color);
+}
+
+/* underline bar that grows on hover */
+.carousel-news .carousel-news-slide-content :is(h2, h3, h4, h5, h6)::after {
+  content: '';
+  position: relative;
+  top: 8px;
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--link-color);
+  transition: width 0.15s;
+}
+
+.carousel-news .carousel-news-slide-content :is(h2, h3, h4, h5, h6) a:any-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.carousel-news .carousel-news-slide-content p {
+  display: -webkit-box;
+  margin: 0;
+  overflow: hidden;
+  font-size: var(--body-font-size-m);
+  font-weight: 400;
+  line-height: var(--body-line-height);
+  color: var(--text-color);
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+
+/* card hover (whole slide is the link target) */
+.carousel-news .carousel-news-slide:is(:hover, :focus-within) .carousel-news-slide-image img {
+  transform: scale(1.1);
+}
+
+.carousel-news .carousel-news-slide:is(:hover, :focus-within) .carousel-news-slide-content :is(h2, h3, h4, h5, h6) {
+  color: var(--link-color);
+}
+
+.carousel-news .carousel-news-slide:is(:hover, :focus-within) .carousel-news-slide-content :is(h2, h3, h4, h5, h6)::after {
+  width: 47px;
+}
+
+/* whole slide clickable via the title link */
+.carousel-news .is-linked .carousel-news-slide-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.carousel-news .carousel-news-controls {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 24px 0 0;
+}
+
+.carousel-news.is-single-page .carousel-news-controls {
+  display: none;
+}
+
+.carousel-news .carousel-news-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 24px;
+  line-height: 0;
+}
+
+.carousel-news .carousel-news-slide-indicator button {
+  display: block;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: 2px solid var(--brand-orange);
+  border-radius: 50%;
+  background-color: var(--background-color);
+  cursor: pointer;
+}
+
+.carousel-news .carousel-news-slide-indicator button:disabled {
+  background-color: var(--brand-orange);
+  cursor: default;
+}
+
+.carousel-news .carousel-news-slide-indicator button:focus-visible {
+  outline: 2px solid var(--brand-orange);
+  outline-offset: 2px;
+}
+
+/* arrows are desktop-only, as on the source */
+.carousel-news .carousel-news-navigation-buttons {
+  display: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-news .carousel-news-navigation-buttons button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Cpath d='M32 44 12.4 24.94a1.33 1.33 0 0 1 0-1.88L32 4' stroke='%23E64626' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 12px 12px no-repeat;
+  cursor: pointer;
+}
+
+.carousel-news .carousel-news-navigation-buttons button.slide-next {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48' fill='none'%3E%3Cpath d='M12 4 31.6 23.06a1.33 1.33 0 0 1 0 1.88L12 44' stroke='%23E64626' stroke-width='6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+}
+
+.carousel-news .carousel-news-navigation-buttons button:focus-visible {
+  outline: 2px solid var(--brand-orange);
+  outline-offset: 2px;
+}
+
+@media (width >= 900px) {
+  .carousel-news {
+    --carousel-news-per-view: 3;
+    --carousel-news-gap: 32px;
+  }
+
+  .carousel-news .carousel-news-navigation-buttons {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 16px;
+    padding: 0 16px;
+  }
+}

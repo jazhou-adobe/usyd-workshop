@@ -1,0 +1,32 @@
+{
+  "variantName": "hero-orange-band",
+  "baseBlock": "hero",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/",
+  "visualCharacteristics": {
+    "stylingNotes": "Full-bleed molecule photo above an orange (#e64626) band; serif H1 left, divider, subheading and dark 'Become a member' button right.",
+    "variantRationale": "Image above a solid orange band with H1 left and subheading+CTA right",
+    "purpose": "Image above a solid orange band with H1 left and subheading+CTA right"
+  },
+  "contentPattern": {
+    "summary": "Full-bleed hero with background image, title and CTA",
+    "structure": "row 1 = background image; row 2 = H1 title, subheading paragraph, CTA link (its own paragraph)"
+  },
+  "blockContent": {
+    "description": "Hero image, H1 'Centre for Drug Discovery Innovation', subheading 'Improving global health outcomes through advanced therapeutics.', CTA 'Become a member'",
+    "rows": [
+      [
+        "Background image"
+      ],
+      [
+        "Title (H1), subheading paragraph, CTA link"
+      ]
+    ]
+  },
+  "options": [],
+  "memberVariantIds": [
+    "hero-orange-band"
+  ],
+  "usage": "Top-of-page landing hero: a full-bleed photo above a coloured band holding the H1 on the left and a subheading plus a single CTA on the right.",
+  "reuseGuidance": "Use for landing pages that lead with an image and a short promise statement. For text over an image, use the base hero instead."
+}

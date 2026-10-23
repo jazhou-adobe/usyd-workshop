@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "drug-discovery",
+      "urls": [
+        "https://www.sydney.edu.au/drug-discovery/"
+      ],
+      "representativeUrl": "https://www.sydney.edu.au/drug-discovery/",
+      "description": "Centre for Drug Discovery Innovation landing page: orange-band hero, intro copy, featured research teaser, explore cards, related news carousel and stay-in-touch contact band",
+      "urlPattern": "/*",
+      "blocks": [
+        {
+          "name": "hero-orange-band",
+          "instances": [
+            ".m-wrapper-hero.m-hero--style-2",
+            ".m-wrapper-hero"
+          ]
+        },
+        {
+          "name": "columns-bleed-image",
+          "instances": [
+            ".cmp-wrapper-teaser .m-content-w-bleed-image"
+          ]
+        },
+        {
+          "name": "cards-portrait",
+          "instances": [
+            ".m-bespoke-layout--bg-white .m-bespoke-layout--3-cols"
+          ]
+        },
+        {
+          "name": "carousel-news",
+          "instances": [
+            ".m-news-article-list"
+          ]
+        },
+        {
+          "name": "columns-contact",
+          "instances": [
+            ".m-bespoke-layout--bg-grey-90 > .m-bespoke-layout__inner"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": [
+            ".m-wrapper-hero.m-hero--style-2",
+            ".m-wrapper-hero"
+          ],
+          "style": null,
+          "blocks": [
+            "hero-orange-band"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Introduction",
+          "selector": [
+            ".m-bespoke-layout--60-30-layout"
+          ],
+          "style": null,
+          "blocks": [],
+          "defaultContent": [
+            ".m-bespoke-layout--60-30-layout .m-bespoke-layout__inner"
+          ]
+        },
+        {
+          "id": "section-3",
+          "name": "Our research",
+          "selector": [
+            ".cmp-wrapper-teaser.cmp-teaser--featured",
+            ".cmp-wrapper-teaser"
+          ],
+          "style": null,
+          "blocks": [
+            "columns-bleed-image"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Explore",
+          "selector": [
+            ".m-bespoke-layout--bg-white:has(.m-bespoke-layout--3-cols)"
+          ],
+          "style": null,
+          "blocks": [
+            "cards-portrait"
+          ],
+          "defaultContent": [
+            ".m-bespoke-layout--bg-white .cmp-title--h2-serif"
+          ]
+        },
+        {
+          "id": "section-5",
+          "name": "Related news",
+          "selector": [
+            ".m-bespoke-layout--bg-white:has(.m-news-article-list)"
+          ],
+          "style": null,
+          "blocks": [
+            "carousel-news"
+          ],
+          "defaultContent": [
+            ".m-news-article-list__title"
+          ]
+        },
+        {
+          "id": "section-6",
+          "name": "Stay in touch",
+          "selector": [
+            ".m-bespoke-layout--bg-grey-90"
+          ],
+          "style": "light-grey",
+          "blocks": [
+            "columns-contact"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

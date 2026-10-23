@@ -1,0 +1,31 @@
+{
+  "variantName": "cards-portrait",
+  "baseBlock": "cards",
+  "canonicalModel": "standalone",
+  "sourceUrl": "https://www.sydney.edu.au/drug-discovery/",
+  "visualCharacteristics": {
+    "stylingNotes": "White background; H2 'Explore' then three portrait-image cards with H3-sized title and short description, whole card linked.",
+    "variantRationale": "Three tall portrait-image cards, no borders, whole card linked",
+    "purpose": "Three tall portrait-image cards, no borders, whole card linked"
+  },
+  "contentPattern": {
+    "summary": "Repeating image/title/description items",
+    "structure": "one row per card: [portrait image | heading with link, description]"
+  },
+  "blockContent": {
+    "description": "Three linked cards: About us, Partnerships, Get involved (image, title, description)",
+    "rows": [
+      [
+        "Image",
+        "Title (heading, linked), description"
+      ]
+    ],
+    "notes": "One row per card"
+  },
+  "options": [],
+  "memberVariantIds": [
+    "cards-portrait"
+  ],
+  "usage": "Grid of three (or more) linked cards with tall portrait images, a heading link and a short description; the whole card is clickable.",
+  "reuseGuidance": "Use for navigation cards to sub-sections. Put a link in the title so the whole card becomes a link. Use carousel-news for longer article lists."
+}

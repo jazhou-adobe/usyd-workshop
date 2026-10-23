@@ -1,0 +1,102 @@
+/* columns-contact: values from source computed styles (sydney.edu.au/drug-discovery) */
+.columns-contact .columns-contact-row {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+/* source columns are flex columns: child margins do not collapse */
+.columns-contact .columns-contact-col {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.columns-contact h2 {
+  margin: 0 0 24px;
+}
+
+/* source h3 text sits in a weight-400 span (regular cut) */
+.columns-contact h3 {
+  margin: 0 0 24px;
+  font-weight: 400;
+}
+
+.columns-contact .columns-contact-col > * + h3 {
+  margin-top: 8px;
+}
+
+.columns-contact p {
+  margin: 0 0 24px;
+}
+
+.columns-contact .columns-contact-col-email a {
+  overflow-wrap: anywhere;
+}
+
+/* icon link list */
+.columns-contact .columns-contact-col-icon-links {
+  padding-bottom: 20px;
+}
+
+.columns-contact .columns-contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.columns-contact .columns-contact-icon-link {
+  margin: 0;
+  border-top: 1px solid #d2d2d2;
+  border-bottom: 1px solid #d2d2d2;
+}
+
+.columns-contact .columns-contact-icon-link + .columns-contact-icon-link {
+  border-top: 0;
+}
+
+.columns-contact .columns-contact-icon-link a:any-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 0;
+  color: var(--text-color);
+  font-size: 18px;
+  line-height: 28px;
+  text-decoration: none;
+}
+
+.columns-contact .columns-contact-icon-link a:hover {
+  color: var(--link-color);
+}
+
+.columns-contact .columns-contact-icon-link .icon {
+  flex: 0 0 auto;
+  width: 24px;
+  height: 24px;
+}
+
+/* tint the icon via mask (source strokes are #c63a1e) */
+.columns-contact .columns-contact-icon-link .icon[style*="--icon-mask"] {
+  background-color: var(--link-color);
+  mask: var(--icon-mask) center / contain no-repeat;
+}
+
+.columns-contact .columns-contact-icon-link .icon[style*="--icon-mask"] img {
+  visibility: hidden;
+}
+
+@media (width >= 900px) {
+  .columns-contact .columns-contact-row {
+    flex-direction: row;
+  }
+
+  .columns-contact .columns-contact-col {
+    flex: 1 1 0;
+  }
+
+  .columns-contact .columns-contact-icon-link a:any-link {
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
