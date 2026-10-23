@@ -19,6 +19,9 @@ async function fetchNav() {
   container.querySelectorAll('img[src]').forEach((img) => {
     img.src = new URL(img.getAttribute('src'), resp.url).href;
   });
+  // DA wraps the label of a list item that has a sub-list in <p>; unwrap it so
+  // items read the same as hand-written markup (li > a + ul)
+  container.querySelectorAll('li > p').forEach((p) => p.replaceWith(...p.childNodes));
   return container;
 }
 
