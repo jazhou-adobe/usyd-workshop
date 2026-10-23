@@ -17,6 +17,11 @@
   width: 100%;
 }
 
+/* reserve the frame's height before it is inserted so content below doesn't jump */
+.embed-formstack:has(> .embed-formstack-fallback:only-child) {
+  min-height: var(--embed-formstack-height);
+}
+
 .embed-formstack .embed-formstack-frame {
   display: block;
   width: 100%;

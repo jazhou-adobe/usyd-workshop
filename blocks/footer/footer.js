@@ -75,12 +75,13 @@ function decorateColumns(section) {
 }
 
 /**
- * A link whose target is an image opens that image in a small popover (e.g. a QR code).
- * @param {HTMLAnchorElement} link
+ * Builds an icon button that opens an image in a small popover (e.g. a QR code).
+ * @param {HTMLImageElement|null} icon toggle icon
+ * @param {string} label accessible name of the button
+ * @param {Element} image popover image (img or picture)
+ * @returns {Element[]} the button and the popover
  */
-function decorateImagePopover(link) {
-  const icon = link.querySelector('img');
-  const label = icon ? icon.alt : link.textContent.trim();
+function buildImagePopover(icon, label, image) {
   const button = document.createElement('button');
   button.type = 'button';
   button.className = 'footer-popover-toggle';
@@ -93,13 +94,7 @@ function decorateImagePopover(link) {
   const popover = document.createElement('div');
   popover.className = 'footer-popover';
   popover.hidden = true;
-  const img = document.createElement('img');
-  img.src = link.href;
-  img.alt = label;
-  img.loading = 'lazy';
-  img.width = 90;
-  img.height = 90;
-  popover.append(img);
+  popover.append(image);
 
   const setOpen = (open) => {
     popover.hidden = !open;
@@ -110,7 +105,37 @@ function decorateImagePopover(link) {
   document.addEventListener('click', (e) => {
     if (!popover.hidden && !button.parentElement.contains(e.target)) setOpen(false);
   });
-  link.replaceWith(button, popover);
+  return [button, popover];
+}
+
+/**
+ * A link whose target is an image opens that image in a popover.
+ * @param {HTMLAnchorElement} link
+ */
+function decorateImageLink(link) {
+  const icon = link.querySelector('img');
+  const label = icon ? icon.alt : link.textContent.trim();
+  const img = document.createElement('img');
+  img.src = link.href;
+  img.alt = label;
+  img.loading = 'lazy';
+  img.width = 90;
+  img.height = 90;
+  link.replaceWith(...buildImagePopover(icon, label, img));
+}
+
+/**
+ * An unlinked item holding two images (icon, then e.g. a QR code) opens the
+ * second image in a popover. Authored this way the QR code is a regular
+ * content image, so it is published with the page.
+ * @param {HTMLLIElement} item
+ */
+function decorateImageItem(item) {
+  const [icon, qr] = item.querySelectorAll('img');
+  const image = qr.closest('picture') || qr;
+  if (!qr.alt) qr.alt = icon.alt;
+  qr.loading = 'lazy';
+  item.replaceChildren(...buildImagePopover(icon, icon.alt || qr.alt, image));
 }
 
 /**
@@ -122,9 +147,12 @@ function decorateIconRow(section) {
   const [icons, logos] = inner.querySelectorAll(':scope > ul');
   if (icons) {
     icons.className = 'footer-social';
+    icons.querySelectorAll(':scope > li').forEach((li) => {
+      if (!li.querySelector('a[href]') && li.querySelectorAll('img').length > 1) decorateImageItem(li);
+    });
     icons.querySelectorAll('a[href]').forEach((a) => {
       if (IMAGE_LINK.test(new URL(a.href).pathname)) {
-        decorateImagePopover(a);
+        decorateImageLink(a);
       } else {
         const icon = a.querySelector('img');
         if (icon) {
