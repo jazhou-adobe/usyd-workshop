@@ -1,0 +1,313 @@
+{
+  "id": "a9ade3e6-5149-40ea-9c04-628d962936d8",
+  "name": "UNIVERSITY OF SYDNEY_26-10-26_a9ade3e6-5149-40ea-9c04-628d962936d8",
+  "metadata": {
+    "brandName": "UNIVERSITY OF SYDNEY",
+    "version": "1.0.0",
+    "language": "en",
+    "namespace": "brand-concierge"
+  },
+  "behavior": {
+    "multimodalCarousel": {
+      "cardClickAction": "openLink"
+    },
+    "input": {
+      "enableVoiceInput": false,
+      "continuousVoiceMode": false,
+      "disableMultiline": true,
+      "showAiChatIcon": {
+        "icon": ""
+      }
+    },
+    "chat": {
+      "messageAlignment": "normal",
+      "messageWidth": "100%"
+    },
+    "privacyNotice": {
+      "title": "Privacy Notice",
+      "text": "Your use of this automated chatbot constitutes your consent that the personal information you provide in the chat session can be collected, used, disclosed, and retained by YourBrand and service providers acting on YourBrand's behalf in accordance with the YourBrand {Privacy Policy}. Please do not provide sensitive personal information (such as financial or health information) in the chatbot.",
+      "links": [
+        {
+          "text": "Privacy Policy",
+          "url": "<your-privacy-policy-url>"
+        }
+      ]
+    },
+    "meetingForm": {
+      "fieldsPerRow": 2,
+      "fieldLayoutRules": {
+        "textInputs": {
+          "allowTwoColumns": true,
+          "fieldTypes": [
+            "string",
+            "email",
+            "tel",
+            "number"
+          ],
+          "identifyBy": null
+        },
+        "dropdowns": {
+          "allowTwoColumns": false,
+          "fieldTypes": [
+            "select"
+          ],
+          "identifyBy": "hasOptions"
+        },
+        "checkboxes": {
+          "allowTwoColumns": false,
+          "fieldTypes": [
+            "boolean",
+            "checkbox"
+          ],
+          "identifyBy": null
+        }
+      },
+      "title": {
+        "text": "Request a Meeting",
+        "alignment": "left"
+      },
+      "subtitle": {
+        "text": "Connect with our experts to discuss drug discovery initiatives.",
+        "alignment": "left"
+      },
+      "buttons": {
+        "submit": {
+          "text": "Submit Request",
+          "alignment": "left"
+        },
+        "cancel": {
+          "text": "Cancel",
+          "alignment": "left"
+        }
+      }
+    },
+    "calendarWidget": {
+      "title": {
+        "text": "Schedule a Meeting",
+        "alignment": "left"
+      },
+      "subtitle": {
+        "text": "Choose a convenient time to meet with us.",
+        "alignment": "left"
+      },
+      "postTitle": {
+        "text": "Once confirmed, you will receive a calendar invite with all the details. The specialist will already have this conversation context, so no need to repeat anything. Looking forward to connecting you with the right expert!",
+        "alignment": "left"
+      },
+      "buttons": {
+        "confirm": {
+          "text": "Confirm",
+          "alignment": "left"
+        },
+        "cancel": {
+          "text": "Cancel",
+          "alignment": "left"
+        }
+      }
+    },
+    "productCard": {
+      "actionButtonSize": "S"
+    },
+    "b2bLiveChat": {
+      "enabled": true
+    }
+  },
+  "disclaimer": {
+    "text": "This assistant is provided by UNIVERSITY OF SYDNEY. By using this service, you agree to our terms and conditions.",
+    "links": [
+      {
+        "text": "Terms of Use",
+        "url": "https://www.sydney.edu.au/terms.html"
+      }
+    ]
+  },
+  "text": {
+    "welcome.heading": "Welcome to the Centre for Drug Discovery Innovation",
+    "welcome.subheading": "Explore how we advance global health outcomes through research and collaboration.",
+    "input.placeholder": "Ask about drug discovery initiatives or research opportunities.",
+    "input.messageInput.aria": "Type your message here",
+    "input.send.aria": "Send message",
+    "input.aiChatIcon.tooltip": "Chat with us",
+    "input.mic.aria": "Use voice input",
+    "card.aria.select": "Select this option",
+    "carousel.prev.aria": "Previous",
+    "carousel.next.aria": "Next",
+    "scroll.bottom.aria": "Scroll to bottom",
+    "error.network": "There was a network error. Please try again.",
+    "loading.message": "Loading...",
+    "feedback.dialog.title.positive": "Thank you for your feedback!",
+    "feedback.dialog.title.negative": "We value your input",
+    "feedback.dialog.question.positive": "What did you like about your experience?",
+    "feedback.dialog.question.negative": "What could we improve?",
+    "feedback.dialog.notes": "Additional comments",
+    "feedback.dialog.submit": "Submit",
+    "feedback.dialog.cancel": "Cancel",
+    "feedback.dialog.notes.placeholder": "Write your comments here...",
+    "feedback.toast.success": "Thank you for your feedback!",
+    "feedback.thumbsUp.aria": "Thumbs up",
+    "feedback.thumbsDown.aria": "Thumbs down",
+    "feedback.title": "Share your feedback",
+    "feedback.positive.title": "What did you like?",
+    "feedback.negative.title": "What can we improve?",
+    "feedback.submitButton": "Submit Feedback",
+    "feedback.positive.options": "",
+    "feedback.negative.options": ""
+  },
+  "arrays": {
+    "welcome.examples": [
+      {
+        "text": "Learn about our research",
+        "systemPrompt": "Tell me about the research initiatives at the Centre for Drug Discovery Innovation.",
+        "backgroundColor": "#e64626",
+        "image": "https://www.sydney.edu.au/content/dam/corporate/images/research/drug-discovery-initiative/ddi-female-researcher-looking-through-a-microscope.jpg"
+      },
+      {
+        "text": "Explore partnerships",
+        "systemPrompt": "What partnerships does the Centre for Drug Discovery Innovation have?",
+        "backgroundColor": "#ea6247",
+        "image": "https://www.sydney.edu.au/content/dam/corporate/images/research/drug-discovery-initiative/ddi-male-and-female-researchers-in-cpc-lab.jpg"
+      },
+      {
+        "text": "Get involved",
+        "systemPrompt": "How can I get involved with the Centre for Drug Discovery Innovation?",
+        "backgroundColor": "#ee7e67",
+        "image": "https://www.sydney.edu.au/content/dam/corporate/images/research/drug-discovery-initiative/nsw-drug-discovery-forum-2024.jpg"
+      },
+      {
+        "text": "What is drug discovery?",
+        "systemPrompt": "Explain the concept of drug discovery.",
+        "backgroundColor": "#f19988",
+        "image": "https://www.sydney.edu.au/content/dam/corporate/images/research/drug-discovery-initiative/centre-for-drug-discovery-and-innovation-banner.jpg"
+      }
+    ],
+    "feedback.positive.options": [
+      "Helpful information",
+      "Easy to use",
+      "Quick responses",
+      "Friendly interaction",
+      "Other"
+    ],
+    "feedback.negative.options": [
+      "Unclear responses",
+      "Slow replies",
+      "Difficult to navigate",
+      "Not helpful",
+      "Other"
+    ]
+  },
+  "assets": {
+    "icons": {
+      "company": "https://www.sydney.edu.au/content/dam/corporate/images/research/drug-discovery-initiative/centre-for-drug-discovery-and-innovation-banner.jpg"
+    }
+  },
+  "visualProfile": {
+    "sendIconIconColor": "#ffffff",
+    "sendIconBackgroundColor": "#522752"
+  },
+  "theme": {
+    "--welcome-input-order": "3",
+    "--welcome-cards-order": "2",
+    "--welcome-heading-size-desktop": "2rem",
+    "--welcome-heading-size-mobile": "1.5rem",
+    "--welcome-heading-weight": "700",
+    "--welcome-heading-text-align": "center",
+    "--welcome-subheading-size-desktop": "1.25rem",
+    "--welcome-subheading-size-mobile": "1rem",
+    "--welcome-subheading-text-align": "center",
+    "--welcome-padding": "2rem",
+    "--prompt-suggestion-background": "#522752",
+    "--prompt-suggestion-background-hover": "#522752",
+    "--prompt-suggestion-text-color": "#522752",
+    "--prompt-suggestion-border-color": "#522752",
+    "--font-family": "Antwerp, Apercu, sans-serif",
+    "--color-primary": "#e64626",
+    "--color-text": "#522752",
+    "--line-height-body": "1.6",
+    "--main-container-background": "#ffffff",
+    "--input-height": "48px",
+    "--input-height-mobile": "40px",
+    "--input-border-radius": "8px",
+    "--input-border-radius-mobile": "6px",
+    "--input-background": "#f7f7f7",
+    "--input-outline-color": "#d9d9d9",
+    "--input-outline-width": "1px",
+    "--input-box-shadow": "0 2px 4px rgba(0, 0, 0, 0.1)",
+    "--input-focus-outline-width": "2px",
+    "--input-focus-outline-color": "#e64626",
+    "--input-font-size": "1rem",
+    "--input-font-weight": "400",
+    "--input-text-color": "#141414",
+    "--input-button-height": "36px",
+    "--input-button-width": "36px",
+    "--submit-button-fill-color": "#ffffff",
+    "--submit-button-fill-color-disabled": "#CCCCCC",
+    "--color-button-submit": "#e64626",
+    "--color-button-submit-hover": "#522752",
+    "--input-button-border-radius": "8px",
+    "--button-disabled-background": "#F0F0F0",
+    "--disclaimer-color": "#141414",
+    "--disclaimer-font-size": "0.875rem",
+    "--disclaimer-font-weight": "400",
+    "--message-user-background": "#e64626",
+    "--message-user-text": "#ffffff",
+    "--message-border-radius": "8px",
+    "--message-padding": "1rem",
+    "--message-concierge-background": "#f3f3f3",
+    "--message-concierge-text": "#000000",
+    "--message-max-width": "100%",
+    "--chat-interface-max-width": "768px",
+    "--message-blocker-height": "48px",
+    "--loading-message-background": "#d9d9d9",
+    "--loading-dot-background": "#626262",
+    "--color-text-muted": "#626262",
+    "--citations-text-font-weight": "500",
+    "--citations-desktop-button-font-size": "0.875rem",
+    "--feedback-icon-btn-background": "#f7f7f7",
+    "--feedback-icon-btn-hover-background": "#e64626",
+    "--feedback-icon-btn-size-desktop": "40px",
+    "--feedback-container-gap": "1rem",
+    "--multimodal-card-box-shadow": "0 2px 4px rgba(0, 0, 0, 0.1)",
+    "--border-radius-card": "8px",
+    "--button-height-s": "36px",
+    "--button-primary-background": "#e64626",
+    "--button-primary-text": "#ffffff",
+    "--button-primary-hover": "#522752",
+    "--button-secondary-border": "#d6dbeb",
+    "--button-secondary-text": "#141414",
+    "--button-secondary-hover": "#c63a1e",
+    "--color-button-secondary-hover-text": "#ffffff",
+    "--privacy-notice-background": "#f7f7f7",
+    "--privacy-notice-padding": "1rem",
+    "--privacy-notice-title-color": "#626262",
+    "--privacy-notice-text-color": "#626262",
+    "--privacy-notice-text-font-size": "0.875rem",
+    "--privacy-notice-title-font-size": "1rem",
+    "--message-concierge-link-decoration": "underline",
+    "--color-secondary": "#d6dbeb",
+    "--prompt-suggestion-button-background": "#d9d9d9",
+    "--prompt-pill-background": "#d6dbeb",
+    "--button-primary-mobile-background": "#522752",
+    "--button-primary-mobile-hover": "#522752",
+    "--main-container-mobile-background": "#ffffff",
+    "--message-concierge-border-width": "1px",
+    "--message-concierge-link-color": "#e64626",
+    "--prompt-suggestion-button-border-radius": "16px",
+    "--prompt-suggestion-button-padding": "0.5rem 1rem",
+    "--prompt-suggestions-container-gap": "0.5rem",
+    "--card-background": "#d6dbeb",
+    "--card-text-font-size": "1rem",
+    "--card-text-padding": "1rem",
+    "--chat-container-background": "#ffffff",
+    "--message-blocker-background": "#ffffff",
+    "--card-text-color": "#ffffff",
+    "--prompt-pill-border-color": "#d6dbeb",
+    "--prompt-pill-text-color": "#000000",
+    "--prompt-suggestion-button-text-color": "#626262",
+    "--prompt-suggestion-button-background-hover": "#d9d9d9",
+    "--welcome-heading-text-color": "#000000",
+    "--welcome-subheading-text-color": "#000000",
+    "--welcome-header-order": "1",
+    "--prompt-suggestions-flex-direction": "row",
+    "--prompt-suggestions-flex-wrap": "wrap"
+  }
+}
